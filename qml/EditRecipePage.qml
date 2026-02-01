@@ -472,7 +472,6 @@ Page {
                         id: cookTimeLabel
                         text: formatDuration(time)
                         height: units.gu(2)
-                        width: parent.width - timeLabel.width
                         anchors {
                             verticalCenter: parent.verticalCenter
                             horizontalCenter: parent.horizontalCenter
