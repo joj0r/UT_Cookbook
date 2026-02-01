@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cookbook.stene\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-01 20:00+0000\n"
+"POT-Creation-Date: 2026-02-01 20:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,10 +23,6 @@ msgstr ""
 
 #: ../qml/AboutPage.qml:54 cookbook.desktop.in.h:1
 msgid "Cookbook"
-msgstr ""
-
-#: ../qml/AboutPage.qml:62
-msgid "V 0.1.0"
 msgstr ""
 
 #: ../qml/AboutPage.qml:152
@@ -121,15 +117,15 @@ msgstr ""
 msgid "Instructions"
 msgstr ""
 
-#: ../qml/EditRecipePage.qml:492 ../qml/RecipePage.qml:46
+#: ../qml/EditRecipePage.qml:491 ../qml/RecipePage.qml:46
 msgid "h"
 msgstr ""
 
-#: ../qml/EditRecipePage.qml:511 ../qml/RecipePage.qml:48
+#: ../qml/EditRecipePage.qml:510 ../qml/RecipePage.qml:48
 msgid "min"
 msgstr ""
 
-#: ../qml/EditRecipePage.qml:530 ../qml/RecipePage.qml:50
+#: ../qml/EditRecipePage.qml:529 ../qml/RecipePage.qml:50
 msgid "s"
 msgstr ""
 
