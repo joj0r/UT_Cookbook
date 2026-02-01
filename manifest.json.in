@@ -1,0 +1,16 @@
+{
+    "name": "cookbook.stene",
+    "description": "A cookbook app with JSON exhange format following the schema.org recipe format",
+    "architecture": "@CLICK_ARCH@",
+    "title": "Cookbook",
+    "hooks": {
+        "cookbook": {
+            "accounts": "cookbook.accounts",
+            "apparmor": "cookbook.apparmor",
+            "desktop":  "cookbook.desktop"
+        }
+    },
+    "version": "1.0.0",
+    "maintainer": "Jonas Stene <jonas@stene.li>",
+    "framework" : "@CLICK_FRAMEWORK@"
+}
