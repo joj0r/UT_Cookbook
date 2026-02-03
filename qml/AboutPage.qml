@@ -59,7 +59,7 @@ Page {
                 }
             }
             Label {
-                text: "V 0.1.0"
+                text: "V 1.0.0"
                 wrapMode: Text.WordWrap
                 anchors {
                     horizontalCenter: parent.horizontalCenter
