@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cookbook.stene\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-01 20:07+0000\n"
+"POT-Creation-Date: 2026-02-03 19:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,7 +53,7 @@ msgstr ""
 msgid "Cookbooks"
 msgstr ""
 
-#: ../qml/CookbooksPage.qml:55 ../qml/SettingsPage.qml:26
+#: ../qml/CookbooksPage.qml:55 ../qml/SettingsPage.qml:27
 msgid "Settings"
 msgstr ""
 
@@ -65,7 +65,7 @@ msgstr ""
 msgid "Head over to settings and add a Nextcloud account"
 msgstr ""
 
-#: ../qml/CookbooksPage.qml:185 ../qml/Main.qml:308
+#: ../qml/CookbooksPage.qml:185 ../qml/Main.qml:312
 msgid "Uncategorized"
 msgstr ""
 
@@ -77,7 +77,7 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: ../qml/EditRecipePage.qml:115 ../qml/Main.qml:464 ../qml/Main.qml:484
+#: ../qml/EditRecipePage.qml:115 ../qml/Main.qml:468 ../qml/Main.qml:488
 msgid "Delete"
 msgstr ""
 
@@ -137,81 +137,81 @@ msgstr ""
 msgid "Logs"
 msgstr ""
 
-#: ../qml/Main.qml:71
+#: ../qml/Main.qml:75
 msgid "Error syncing recipes"
 msgstr ""
 
-#: ../qml/Main.qml:98 ../qml/Main.qml:120 ../qml/Main.qml:151
-#: ../qml/Main.qml:181
+#: ../qml/Main.qml:102 ../qml/Main.qml:124 ../qml/Main.qml:155
+#: ../qml/Main.qml:185
 msgid "Status"
 msgstr ""
 
-#: ../qml/Main.qml:99
+#: ../qml/Main.qml:103
 msgctxt "%1 is recipe name"
 msgid "Recipe '%1' successfully imported"
 msgstr ""
 
-#: ../qml/Main.qml:121
+#: ../qml/Main.qml:125
 msgctxt "%1 is recipe name"
 msgid "Recipe %1 successfully saved"
 msgstr ""
 
-#: ../qml/Main.qml:136 ../qml/Main.qml:165 ../qml/Main.qml:193
+#: ../qml/Main.qml:140 ../qml/Main.qml:169 ../qml/Main.qml:197
 msgid "Error"
 msgstr ""
 
-#: ../qml/Main.qml:152
+#: ../qml/Main.qml:156
 msgctxt "%1 is recipe name"
 msgid "Recipe '%1' successfully saved"
 msgstr ""
 
-#: ../qml/Main.qml:182
+#: ../qml/Main.qml:186
 msgctxt "%1 is recipe name"
 msgid "Recipe '%1' successfully deleted"
 msgstr ""
 
-#: ../qml/Main.qml:375
+#: ../qml/Main.qml:379
 msgid "Viewing Recipe"
 msgstr ""
 
-#: ../qml/Main.qml:402
+#: ../qml/Main.qml:406
 msgid "Editing Recipe"
 msgstr ""
 
-#: ../qml/Main.qml:430
+#: ../qml/Main.qml:434
 msgid "Creating new Recipe"
 msgstr ""
 
-#: ../qml/Main.qml:454
+#: ../qml/Main.qml:458
 msgid "Abort"
 msgstr ""
 
-#: ../qml/Main.qml:455
+#: ../qml/Main.qml:459
 msgid "Abort editing"
 msgstr ""
 
-#: ../qml/Main.qml:456
+#: ../qml/Main.qml:460
 msgid "Are you sure you want to abort editing, and discard all changes?"
 msgstr ""
 
-#: ../qml/Main.qml:465 ../qml/Main.qml:485
+#: ../qml/Main.qml:469 ../qml/Main.qml:489
 msgid "Delete recipe"
 msgstr ""
 
-#: ../qml/Main.qml:466 ../qml/Main.qml:486
+#: ../qml/Main.qml:470 ../qml/Main.qml:490
 msgctxt "%1 is recipe name"
 msgid "Are you sure you want to delete recipe %1?"
 msgstr ""
 
-#: ../qml/Main.qml:502
+#: ../qml/Main.qml:506
 msgid "Ok"
 msgstr ""
 
-#: ../qml/Main.qml:503
+#: ../qml/Main.qml:507
 msgid "Accounts"
 msgstr ""
 
-#: ../qml/Main.qml:504
+#: ../qml/Main.qml:508
 msgid ""
 "To change account, you have to disable this account from the Lomiri System "
 "Settings.\n"
@@ -219,15 +219,15 @@ msgid ""
 "Then you can restart this app, and add a new account here."
 msgstr ""
 
-#: ../qml/Main.qml:511
+#: ../qml/Main.qml:515
 msgid "Purge"
 msgstr ""
 
-#: ../qml/Main.qml:512 ../qml/SettingsPage.qml:189
+#: ../qml/Main.qml:516 ../qml/SettingsPage.qml:203
 msgid "Purge recipe database"
 msgstr ""
 
-#: ../qml/Main.qml:513
+#: ../qml/Main.qml:517
 msgid ""
 "Are you sure you want to purge the local recipe database?\n"
 "\n"
@@ -235,7 +235,7 @@ msgid ""
 "on the upstream server."
 msgstr ""
 
-#: ../qml/Main.qml:621
+#: ../qml/Main.qml:626
 msgid "Create new recipe"
 msgstr ""
 
@@ -259,23 +259,23 @@ msgstr ""
 msgid "Date modified"
 msgstr ""
 
-#: ../qml/SettingsPage.qml:37
+#: ../qml/SettingsPage.qml:38
 msgid "See logs"
 msgstr ""
 
-#: ../qml/SettingsPage.qml:83
+#: ../qml/SettingsPage.qml:84
 msgid "Account"
 msgstr ""
 
-#: ../qml/SettingsPage.qml:98
+#: ../qml/SettingsPage.qml:99
 msgid "Add Nextcloud account"
 msgstr ""
 
-#: ../qml/SettingsPage.qml:157
+#: ../qml/SettingsPage.qml:169
 msgid "Use test account"
 msgstr ""
 
-#: ../qml/SettingsPage.qml:184
+#: ../qml/SettingsPage.qml:198
 msgid "Danger zone"
 msgstr ""
 

@@ -38,7 +38,12 @@ clickable desktop --dark-mode
 clickable #Assuming device connected through cable or ssh configured
 ```
 
-When testing on your desktop (if you do not have the Lomiri Account Manager) you can add your own `qml/secrets.js` file from [qml/testAccount.js](qml/testAccount.js) with url and credentials, and use the `Use test account` button under settings to activate.
+When testing on your desktop (if you do not have the Lomiri Account Manager) you can add your own `qml/secrets.js` file from the template: [qml/testAccount.js](qml/testAccount.js) with url and credentials.
+Then you must set the `showTestAccount` to true:
+```qml
+    property bool showTestAccount: true
+```
+And click the `Use test account` button that will appear under settings to activate.
 
 I have experienced the device freezing and rebooting after running `clickable`, this seems to happen if an account is added to the app. To avoid this you can go to `System Settings` -> `Accounts` -> `[yourAccount]` and remove the access to this account for this app before running `clickable`.
 

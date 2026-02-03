@@ -13,6 +13,7 @@ import Lomiri.OnlineAccounts.Client 0.1
 Page {
     id: settingsPage
     property bool startupSync
+    property bool showTestAccount
     signal addAccount
     signal useTest
     signal purgeDatabase
@@ -126,38 +127,51 @@ Page {
                                 verticalCenter: parent.verticalCenter
                             }
                         }
-                Icon {
-                    name: "info"
-                    height: units.gu(2)
-                    width: height
-                    anchors {
-                        verticalCenter: parent.verticalCenter
+                        Icon {
+                            name: "info"
+                            height: units.gu(2)
+                            width: height
+                            anchors {
+                                verticalCenter: parent.verticalCenter
+                            }
+                            MouseArea {
+                                anchors.fill: parent
+                                onClicked: openAccountInfo()
+                            }
+                        }
                     }
-                    MouseArea {
-                      anchors.fill: parent
-                      onClicked: openAccountInfo()
-                    }
-                }
-                    }
-                }
-            }
-            Rectangle {
-                height: units.gu(0.125)
-                color: theme.palette.normal.foreground
-                anchors {
-                    left: parent.left
-                    right: parent.right
                 }
             }
-            Row {
-                id: testAccount
-                spacing: units.gu(2)
+            Loader {
+                id: testAccountLoader
+                sourceComponent: settingsPage.showTestAccount ? testAccountComp : undefined
+                width: parent.width
+            }
+            Component {
+                id: testAccountComp
+                Column {
+                    padding: 0
+                    spacing: units.gu(2)
+                    Rectangle {
+                        height: units.gu(0.125)
+                        color: theme.palette.normal.foreground
+                        anchors {
+                            left: parent.left
+                            leftMargin: -units.gu(2)
+                            right: parent.right
+                        }
+                    }
+                    Row {
+                        id: testAccount
+                        spacing: units.gu(2)
 
-                Button {
-                    text: i18n.tr("Use test account")
-                    onClicked: settingsPage.useTest()
-                    anchors {
-                        verticalCenter: parent.verticalCenter
+                        Button {
+                            text: i18n.tr("Use test account")
+                            onClicked: settingsPage.useTest()
+                            anchors {
+                                verticalCenter: parent.verticalCenter
+                            }
+                        }
                     }
                 }
             }

@@ -35,6 +35,10 @@ MainView {
     objectName: 'mainView'
     applicationName: 'cookbook.stene'
     automaticOrientation: true
+
+    // Enable this if you need a test-account on desktop
+    property bool showTestAccount: false
+
     property var categories
     property var logs
     property string selectedCategory
@@ -568,6 +572,7 @@ MainView {
                 onOpenAccountInfo: {
                     PopupUtils.open(accountInfoComp, root);
                 }
+                showTestAccount: root.showTestAccount
                 onUseTest: {
                     serverModel.clear();
                     serverModel.append({
