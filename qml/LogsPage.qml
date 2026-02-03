@@ -129,30 +129,6 @@ Page {
                 }
             }
 
-            trailingActions: ListItemActions {
-                delegate: Rectangle {
-                    width: units.gu(10)
-                    color: theme.palette.normal.background
-                    Icon {
-                        name: "delete"
-                        width: units.gu(3)
-                        height: width
-                        color: "red"
-                        anchors {
-                            horizontalCenter: parent.horizontalCenter
-                            verticalCenter: parent.verticalCenter
-                        }
-                    }
-                }
-                actions: [
-                    Action {
-                        iconName: "delete"
-                        onTriggered: {
-                            deleteRecipe(modelData);
-                        }
-                    }
-                ]
-            }
         }
     }
 }
