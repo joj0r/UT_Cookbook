@@ -274,7 +274,10 @@ const checkForUpdates = (url, auth) => {
           })
       }).catch(error => {
         addLogEntry("database", "ERROR", `Could not fetch recipes from server: '${error}'`)
-        reject(i18n.ctr('%1 is error message', 'Could not fetch recipes from server: %1').arg(error))
+        reject(
+          // TRANSLATORS: %1 is the error message returned
+          i18n.tr('Could not fetch recipes from server: %1').arg(error)
+        )
       })
   })
 }

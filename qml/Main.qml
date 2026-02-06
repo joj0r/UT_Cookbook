@@ -100,13 +100,14 @@ MainView {
 
                 PopupUtils.open(infoPopover, root, {
                     'heading': i18n.tr('Status'),
-                    'body': i18n.ctr("%1 is recipe name", "Recipe '%1' successfully imported").arg(response.name)
+                    // TRANSLATORS: %1 is the recipe name
+                    'body': i18n.tr("Recipe '%1' successfully imported").arg(response.name)
                 });
                 DB.addLogEntry("server", "OK", importMessage + `'${response.name}' - OK`);
                 resolve(response);
             }).catch(error => {
                 PopupUtils.open(infoPopover, root, {
-                    'heading': i18n.ctr('Error'),
+                    'heading': i18n.tr('Error'),
                     'body': error
                 });
                 DB.addLogEntry("server", "ERROR", importMessage + `'${recipeUrl}' - Failed: ${error}`);
@@ -122,7 +123,8 @@ MainView {
             Server.createRecipe(account.serverUrl, account.auth, recipe).then(response => {
                 PopupUtils.open(infoPopover, root, {
                     'heading': i18n.tr('Status'),
-                    'body': i18n.ctr('%1 is recipe name', 'Recipe %1 successfully saved').arg(recipe.name)
+                    // TRANSLATORS: %1 is the recipe name
+                    'body': i18n.tr('Recipe %1 successfully saved').arg(recipe.name)
                 });
                 const now = new Date();
                 const isoNow = now.toISOString();
@@ -153,7 +155,8 @@ MainView {
             Server.updateRecipe(account.serverUrl, account.auth, recipe.id, recipe).then(response => {
                 PopupUtils.open(infoPopover, root, {
                     'heading': i18n.tr('Status'),
-                    'body': i18n.ctr("%1 is recipe name", "Recipe '%1' successfully saved").arg(response.name)
+                    // TRANSLATORS: %1 is the recipe name
+                    'body': i18n.tr("Recipe '%1' successfully saved").arg(response.name)
                 });
                 const now = new Date();
                 const isoNow = now.toISOString();
@@ -183,7 +186,8 @@ MainView {
                 Server.deleteRecipe(account.serverUrl, account.auth, id).then(response => {
                     PopupUtils.open(infoPopover, root, {
                         'heading': i18n.tr('Status'),
-                    'body': i18n.ctr("%1 is recipe name", "Recipe '%1' successfully deleted").arg(response.name)
+                    // TRANSLATORS: %1 is the recipe name
+                    'body': i18n.tr("Recipe '%1' successfully deleted").arg(response.name)
                     });
                     DB.removeRecipe(id);
                     DB.removeRecipeMeta(id);
@@ -467,7 +471,8 @@ MainView {
             OKCancelDialog {
                 okButtonText: i18n.tr("Delete")
                 title: i18n.tr("Delete recipe")
-                text: i18n.ctr('%1 is recipe name', 'Are you sure you want to delete recipe %1?').arg(object.recipe.name)
+                // TRANSLATORS: %1 is the recipe name
+                text: i18n.tr('Are you sure you want to delete recipe %1?').arg(object.recipe.name)
                 onDoAction: {
                     const prevPage = object.page;
                     const pLayout = pageLayout;
@@ -487,7 +492,8 @@ MainView {
                 signal action
                 okButtonText: i18n.tr("Delete")
                 title: i18n.tr("Delete recipe")
-                text: i18n.ctr('%1 is recipe name', 'Are you sure you want to delete recipe %1?').arg(object.recipe.name)
+                // TRANSLATORS: %1 is the recipe name
+                text: i18n.tr('Are you sure you want to delete recipe %1?').arg(object.recipe.name)
                 onDoAction: {
                     const prevPage = object.page;
                     const pLayout = pageLayout;

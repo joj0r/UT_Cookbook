@@ -58,7 +58,10 @@ const importRecipe = (url, auth, recipeUrl) => {
   return new Promise((resolve, reject) => {
     apiCall(url + endpointUrl, auth, "POST", "", recipeUrl)
       .then(result => resolve(result))
-      .catch(error => reject(i18n.ctr('%1 is error message', 'Importing recipe failed: %1').arg(error)))
+      .catch(error => reject(
+        // TRANSLATORS: %1 is the error message returned
+        i18n.tr('Importing recipe failed: %1').arg(error))
+      )
   })
 }
 
@@ -68,7 +71,10 @@ const createRecipe = (url, auth, recipe) => {
   return new Promise((resolve, reject) => {
     apiCall(url + endpointUrl, auth, "POST", "", recipe)
       .then(result => resolve(result))
-      .catch(error => reject(i18n.ctr('%1 is error message', 'Creating recipe failed: %1').arg(error)))
+      .catch(error => reject(
+        // TRANSLATORS: %1 is the error message returned
+        i18n.tr('Creating recipe failed: %1').arg(error))
+      )
   })
 }
 
@@ -78,7 +84,10 @@ const updateRecipe = (url, auth, id, recipe) => {
   return new Promise((resolve, reject) => {
     apiCall(url + endpointUrl, auth, "PUT", id, recipe)
       .then(result => resolve(result))
-      .catch(error => reject(i18n.ctr('%1 is error message', 'Updating recipe failed: %1').arg(error)))
+      .catch(error => reject(
+        // TRANSLATORS: %1 is the error message returned
+        i18n.tr('Updating recipe failed: %1').arg(error))
+      )
   })
 }
 
@@ -88,7 +97,10 @@ const deleteRecipe = (url, auth, id) => {
   return new Promise((resolve, reject) => {
     apiCall(url + endpointUrl, auth, "DELETE", id)
       .then(result => resolve(result))
-      .catch(error => reject(i18n.ctr('%1 is recipe id, %2 is error message', 'Deleting recipe %1 failed: %2').arg(id, error)))
+      .catch(error => reject(
+        // TRANSLATORS: %1 is recipe id, %2 is the error message returned
+        i18n.tr('Deleting recipe %1 failed: %2').arg(id).arg(error))
+      )
   })
 }
 
@@ -99,7 +111,10 @@ const getRecipe = (url, auth, id) => {
   return new Promise((resolve, reject) => {
     apiCall(url + endpointUrl, auth, "GET", id)
       .then(result => resolve(result))
-      .catch(error => reject(i18n.ctr('%1 is recipe id, %2 is error message', 'Fetching recipe %1 failed: %2').arg(id, error)))
+      .catch(error => reject(
+        // TRANSLATORS: %1 is recipe id, %2 is the error message returned
+        i18n.tr('%1 is recipe id, %2 is error message', 'Fetching recipe %1 failed: %2').arg(id).arg(error))
+      )
   })
 }
 
