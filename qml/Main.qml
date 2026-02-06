@@ -211,9 +211,6 @@ MainView {
     function startSync() {
         startupSync = true;
         DB.initializeDB();
-        DB.getCategories().then(cat => {
-            categories = cat;
-        });
         update();
     }
 
@@ -239,10 +236,10 @@ MainView {
         onAccessReply: {
             reply.account.authenticate({});
         }
-        onReadyChanged: {
-            if (accountModel.accountList.length > 0)
-                accountModel.accountList[0].authenticate({});
-        }
+        // onReadyChanged: {
+        //     if (accountModel.accountList.length > 0)
+        //         accountModel.accountList[0].authenticate({});
+        // }
     }
 
     Connections {
@@ -309,8 +306,6 @@ MainView {
                 root.loading = true;
                 if (accountModel.accountList.length > 0)
                     accountModel.accountList[0].authenticate({});
-                DB.initializeDB();
-                root.update();
             }
             onOpenCategory: category => {
                 selectedCategory = category ? category : i18n.tr("Uncategorized");
