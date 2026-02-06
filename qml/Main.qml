@@ -86,8 +86,8 @@ MainView {
                 "url": recipeUrl
             }).then(response => {
                 // Hackishly setting the modified date in the past
-                // to trigger a download of the image on next sync. 
-                // Doing like this because image is not ready for 
+                // to trigger a download of the image on next sync.
+                // Doing like this because image is not ready for
                 // download right after import to server.
                 const now = new Date("2026-01-01T00:00:00");
                 response.dateModified = now;
@@ -186,8 +186,8 @@ MainView {
                 Server.deleteRecipe(account.serverUrl, account.auth, id).then(response => {
                     PopupUtils.open(infoPopover, root, {
                         'heading': i18n.tr('Status'),
-                    // TRANSLATORS: %1 is the recipe name
-                    'body': i18n.tr("Recipe '%1' successfully deleted").arg(response.name)
+                        // TRANSLATORS: %1 is the recipe name
+                        'body': i18n.tr("Recipe '%1' successfully deleted").arg(response.name)
                     });
                     DB.removeRecipe(id);
                     DB.removeRecipeMeta(id);
@@ -304,8 +304,7 @@ MainView {
             bottomEdgeComp: bottomEdgeComponent
             onRefresh: {
                 root.loading = true;
-                if (accountModel.accountList.length > 0)
-                    accountModel.accountList[0].authenticate({});
+                root.update();
             }
             onOpenCategory: category => {
                 selectedCategory = category ? category : i18n.tr("Uncategorized");
