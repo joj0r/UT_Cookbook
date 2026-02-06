@@ -28,7 +28,8 @@ import Lomiri.OnlineAccounts.Client 0.1
 
 import "database.js" as DB
 import "server.js" as Server
-import "secret.js" as Testing
+// Enable this if you need a test-account on desktop
+// import "secret.js" as Testing
 
 MainView {
     id: root
