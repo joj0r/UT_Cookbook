@@ -120,6 +120,7 @@ Page {
 
             anchors {
                 fill: parent
+                topMargin: units.gu(0.5)
                 bottomMargin: units.gu(3)
             }
 
