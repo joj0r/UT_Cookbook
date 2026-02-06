@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cookbook.stene\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-06 10:50+0000\n"
+"POT-Creation-Date: 2026-02-06 11:38+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,14 +24,6 @@ msgstr ""
 
 #: ../qml/AboutPage.qml:54 cookbook.desktop.in.h:1
 msgid "Cookbook"
-msgstr ""
-
-#: ../qml/AboutPage.qml:152
-msgid "Issues"
-msgstr ""
-
-#: ../qml/AboutPage.qml:156
-msgid "https://github.com/joj0r/UT_Cookbook/issues"
 msgstr ""
 
 #: ../qml/AddRecipe.qml:86

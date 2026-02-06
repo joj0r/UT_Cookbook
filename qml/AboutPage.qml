@@ -46,7 +46,7 @@ Page {
                     source: "../assets/logo.svg"
                 }
                 anchors {
-                  topMargin: units.gu(2)
+                    topMargin: units.gu(2)
                     horizontalCenter: parent.horizontalCenter
                 }
             }
@@ -67,7 +67,7 @@ Page {
             }
 
             Label {
-              text:`
+                text: `
               <p>Sync your recipes from your <a href=\"https://nextcloud.com/\">Nextcloud server</a> with <a href=\"https://apps.nextcloud.com/apps/cookbook\">Cookbook app</a> installed to your Ubuntu Touch device.</p>
 
               <p>Currently a work in progress, expect some bugs and lacking features.</p>
@@ -104,74 +104,69 @@ Page {
                     right: parent.right
                 }
             }
-            Rectangle {
-                height: units.gu(0.125)
-                color: theme.palette.normal.foreground
-                anchors {
-                    left: parent.left
-                    right: parent.right
+            ListModel {
+                id: linkModel
+                ListElement {
+                    title: "Donate"
+                    link: "https://ubports.com/donate"
+                }
+                ListElement {
+                    title: "Source code"
+                    link: "https://github.com/joj0r/UT_Cookbook"
+                }
+                ListElement {
+                    title: "Issues"
+                    link: "https://github.com/joj0r/UT_Cookbook/issues"
                 }
             }
-            Row {
-                spacing: units.gu(1)
-                width: parent.width - units.gu(2)
-                Column {
-                    width: parent.width - units.gu(5)
-                    Label {
-                        text: i18n.tr("Source code")
-                        font.bold: true
-                    }
-                    Label {
-                        text: i18n.tr("https://github.com/joj0r/UT_Cookbook")
-                        textSize: Label.Small
-                    }
-                }
-                Icon {
-                    name: "go-next"
-                    height: units.gu(3)
-                    width: height
+            Repeater {
+                model: linkModel
+                Rectangle {
+                    width: parent.width
+                    height: sourceRow.height + units.gu(2)
+                    color: theme.palette.normal.background
                     anchors {
-                        verticalCenter: parent.verticalCenter
+                        left: parent.left
+                        right: parent.right
                     }
-                }
-            }
-            Rectangle {
-                height: units.gu(0.125)
-                color: theme.palette.normal.foreground
-                anchors {
-                    left: parent.left
-                    right: parent.right
-                }
-            }
-            Row {
-                spacing: units.gu(1)
-                width: parent.width - units.gu(2)
-                Column {
-                    width: parent.width - units.gu(5)
-                    Label {
-                        text: i18n.tr("Issues")
-                        font.bold: true
+                    MouseArea {
+                        anchors.fill: parent
+                        onClicked: Qt.openUrlExternally(link)
                     }
-                    Label {
-                        text: i18n.tr("https://github.com/joj0r/UT_Cookbook/issues")
-                        textSize: Label.Small
+                    Row {
+                        id: sourceRow
+                        spacing: units.gu(1)
+                        leftPadding: units.gu(2)
+                        width: parent.width - units.gu(2)
+                        Column {
+                            width: parent.width - units.gu(5)
+                            Label {
+                                text: title
+                                font.bold: true
+                            }
+                            Label {
+                                text: link
+                                textSize: Label.Small
+                            }
+                        }
+                        Icon {
+                            name: "go-next"
+                            height: units.gu(3)
+                            width: height
+                            anchors {
+                                verticalCenter: parent.verticalCenter
+                            }
+                        }
                     }
-                }
-                Icon {
-                    name: "go-next"
-                    height: units.gu(3)
-                    width: height
-                    anchors {
-                        verticalCenter: parent.verticalCenter
+                    Rectangle {
+                        height: units.gu(0.125)
+                        color: theme.palette.normal.foreground
+                        anchors {
+                            left: parent.left
+                            right: parent.right
+                            bottom: parent.bottom
+                        }
                     }
-                }
-            }
-            Rectangle {
-                height: units.gu(0.125)
-                color: theme.palette.normal.foreground
-                anchors {
-                    left: parent.left
-                    right: parent.right
                 }
             }
         }
