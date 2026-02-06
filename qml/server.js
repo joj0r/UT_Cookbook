@@ -8,7 +8,7 @@ const apiCall = (url, auth, method, param = "", recipe) => {
   return new Promise((resolve, reject) => {
 
     var timer = new Timer();
-    timer.interval = 15000;
+    timer.interval = 20000;
     timer.triggered.connect(function() {
       reject(i18n.tr("Request timed out"))
     })
