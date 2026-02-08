@@ -190,7 +190,6 @@ const checkForUpdates = (url, auth) => {
               return res.id == parseInt(recipe.id)
             }).dateModified) {
               //    - YES -> Update recipe
-              updateRecipeMeta(recipe)
               const updateRecipeMessage = "Updating recipe: "
               updatedRecipes.push(new Promise(resolve => Server.getRecipe(url, auth, parseInt(recipe.id))
                 .then(rec => {
@@ -208,6 +207,7 @@ const checkForUpdates = (url, auth) => {
                     })
                 })
                 .then(rec => {
+                  updateRecipeMeta(recipe)
                   updateRecipe(rec)
                   return
                 })
@@ -222,7 +222,6 @@ const checkForUpdates = (url, auth) => {
             }
           } else {
             //  - NO -> New recipe; add
-            addRecipeMeta(recipe)
             const addRecipeMessage = "Adding recipe: "
             addedRecipes.push(new Promise(resolve => Server.getRecipe(url, auth, parseInt(recipe.id))
               .then(rec => {
@@ -240,6 +239,7 @@ const checkForUpdates = (url, auth) => {
                   })
               })
               .then(rec => {
+                addRecipeMeta(recipe)
                 addRecipe(rec)
                 return
               })
