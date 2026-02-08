@@ -191,7 +191,7 @@ const checkForUpdates = (url, auth) => {
             }).dateModified) {
               //    - YES -> Update recipe
               const updateRecipeMessage = "Updating recipe: "
-              updatedRecipes.push(new Promise(resolve => Server.getRecipe(url, auth, parseInt(recipe.id))
+              updatedRecipes.push(new Promise((resolve, reject) => Server.getRecipe(url, auth, parseInt(recipe.id))
                 .then(rec => {
                   const imageMessage = "Downloading image for recipe: "
                   return Server.getImage(url, auth, rec.imageUrl)
@@ -217,13 +217,14 @@ const checkForUpdates = (url, auth) => {
                 })
                 .catch(error => {
                   addLogEntry("database", "ERROR", updateRecipeMessage + `'${recipe.name}' - Error: ${error}`)
+                  reject()
                 })
               ))
             }
           } else {
             //  - NO -> New recipe; add
             const addRecipeMessage = "Adding recipe: "
-            addedRecipes.push(new Promise(resolve => Server.getRecipe(url, auth, parseInt(recipe.id))
+            addedRecipes.push(new Promise((resolve, reject) => Server.getRecipe(url, auth, parseInt(recipe.id))
               .then(rec => {
                 const imageMessage = "Downloading image for recipe: "
                 return Server.getImage(url, auth, recipe.imageUrl)
@@ -249,6 +250,7 @@ const checkForUpdates = (url, auth) => {
               })
               .catch(error => {
                 addLogEntry("database", "ERROR", addRecipeMessage + `'${recipe.name}' - Error: ${error}`)
+                reject()
               })
             ))
           }
