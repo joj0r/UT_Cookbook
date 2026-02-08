@@ -237,10 +237,10 @@ MainView {
         onAccessReply: {
             reply.account.authenticate({});
         }
-        // onReadyChanged: {
-        //     if (accountModel.accountList.length > 0)
-        //         accountModel.accountList[0].authenticate({});
-        // }
+        onReadyChanged: {
+            if (accountModel.accountList.length > 0)
+                accountModel.accountList[0].authenticate({});
+        }
     }
 
     Connections {
