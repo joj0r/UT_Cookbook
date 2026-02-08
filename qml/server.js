@@ -113,7 +113,7 @@ const getRecipe = (url, auth, id) => {
       .then(result => resolve(result))
       .catch(error => reject(
         // TRANSLATORS: %1 is recipe id, %2 is the error message returned
-        i18n.tr('%1 is recipe id, %2 is error message', 'Fetching recipe %1 failed: %2').arg(id).arg(error))
+        i18n.tr('Fetching recipe %1 failed: %2').arg(id).arg(error))
       )
   })
 }
