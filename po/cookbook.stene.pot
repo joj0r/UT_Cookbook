@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cookbook.stene\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-06 11:38+0000\n"
+"POT-Creation-Date: 2026-02-09 13:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,7 +16,6 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
 #: ../qml/AboutPage.qml:20 ../qml/CookbooksPage.qml:60
 msgid "About"
@@ -273,46 +272,40 @@ msgstr ""
 msgid "Danger zone"
 msgstr ""
 
-#: ../qml/database.js:272
+#: ../qml/database.js:274
 msgid "Recipes sucsessfully updated from Nextcloud server"
 msgstr ""
 
 #. TRANSLATORS: %1 is the error message returned
-#: ../qml/database.js:279
+#: ../qml/database.js:281
 msgid "Could not fetch recipes from server: %1"
 msgstr ""
 
-#: ../qml/server.js:13
-msgid "Request timed out"
-msgstr ""
-
 #. TRANSLATORS: %1 is the error message returned
-#: ../qml/server.js:63
+#: ../qml/server.js:55
 msgid "Importing recipe failed: %1"
 msgstr ""
 
 #. TRANSLATORS: %1 is the error message returned
-#: ../qml/server.js:76
+#: ../qml/server.js:68
 msgid "Creating recipe failed: %1"
 msgstr ""
 
 #. TRANSLATORS: %1 is the error message returned
-#: ../qml/server.js:89
+#: ../qml/server.js:81
 msgid "Updating recipe failed: %1"
 msgstr ""
 
 #. TRANSLATORS: %1 is recipe id, %2 is the error message returned
-#: ../qml/server.js:102
+#: ../qml/server.js:94
 msgid "Deleting recipe %1 failed: %2"
 msgstr ""
 
 #. TRANSLATORS: %1 is recipe id, %2 is the error message returned
-#: ../qml/server.js:116
-msgid "%1 is recipe id, %2 is error message"
-msgid_plural "Fetching recipe %1 failed: %2"
-msgstr[0] ""
-msgstr[1] ""
+#: ../qml/server.js:108
+msgid "Fetching recipe %1 failed: %2"
+msgstr ""
 
-#: ../qml/server.js:140
+#: ../qml/server.js:132
 msgid "Image download timed out"
 msgstr ""

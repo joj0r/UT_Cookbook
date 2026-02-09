@@ -1,24 +1,15 @@
 const apiCall = (url, auth, method, param = "", recipe) => {
   var xhr = new XMLHttpRequest();
 
-  function Timer() {
-    return Qt.createQmlObject("import QtQuick 2.0; Timer {}", root);
-  }
-
   return new Promise((resolve, reject) => {
 
-    var timer = new Timer();
-    timer.interval = 20000;
-    timer.triggered.connect(function() {
-      reject(i18n.tr("Request timed out"))
-    })
-
     try {
-      timer.start();
+      xhr.ontimeout = () => {
+        reject(e.message + '\nAre you online?')
+      }
       xhr.onreadystatechange = () => {
         if (xhr.readyState === XMLHttpRequest.DONE) {
           if (xhr.status === 200) {
-            timer.stop()
             resolve(JSON.parse(xhr.responseText.toString()));
           }
           reject(xhr.status + ' ' + xhr.statusText)
@@ -35,6 +26,7 @@ const apiCall = (url, auth, method, param = "", recipe) => {
       xhr.setRequestHeader(
         'Content-Type', 'application/json;charset=UTF-8'
       )
+      xhr.timeout = 5000;
       if (recipe) {
         xhr.send(JSON.stringify(recipe));
       } else
