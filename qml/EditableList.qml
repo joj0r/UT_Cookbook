@@ -8,6 +8,7 @@ import Qt.labs.settings 1.0
 Column {
     id: listRoot
     property var model
+    property bool dragMode
     signal deleteItem(int index)
     signal addItem(string name)
     signal editItem(int index, string name)
@@ -24,22 +25,40 @@ Column {
         left: parent.left
     }
 
+    Component {
+        id: dragModeComp
+        Icon {
+            name: "ok"
+            height: units.gu(3)
+            width: height
+            // color: theme.palette.normal.baseText
+            anchors {
+                verticalCenter: parent.verticalCenter
+            }
+            MouseArea {
+                anchors.fill: parent
+                onClicked: listRoot.dragMode = false
+            }
+        }
+    }
+
     LomiriListView {
         id: listView
         model: listRoot.model
         width: parent.width
         height: contentItem.childrenRect.height
+        spacing: units.gu(1)
         flickableDirection: Flickable.AutoFlickIfNeeded
         ViewItems.onDragUpdated: {
             if (event.status == ListItemDrag.Moving) {
                 // inform dragging that move is not performed
                 event.accept = false;
             } else if (event.status == ListItemDrag.Dropped) {
-                moveItem(event.from, event.to)
-                listRoot.refresh()
+                moveItem(event.from, event.to);
+                listRoot.refresh();
             }
         }
-        ViewItems.dragMode: true
+        ViewItems.dragMode: listRoot.dragMode
         anchors {
             left: parent.left
             right: parent.right
@@ -48,41 +67,48 @@ Column {
             id: delegateItem
             property bool recalcError: modelData.value === undefined
             width: parent.width
-            height: ingredientText.height + units.gu(1)
+            height: ingredientText.height
             color: theme.palette.normal.background
             divider.visible: false
             Row {
                 spacing: units.gu(1)
-                topPadding: units.gu(1)
-                bottomPadding: units.gu(1)
                 width: parent.width
-                Icon {
-                    id: deleteIcon
-                    name: "delete"
-                    height: units.gu(2)
-                    width: height
-                    MouseArea {
-                        anchors.fill: parent
-                        onClicked: {
-                            listRoot.deleteItem(index);
-                            listRoot.refresh();
-                        }
-                    }
-                    anchors {
-                        verticalCenter: parent.verticalCenter
-                    }
+                Loader {
+                    id: dragModeLoader
+                    sourceComponent: listRoot.dragMode ? dragModeComp : undefined
+                    width: listRoot.dragMode ? units.gu(3) : 0
                 }
                 TextArea {
                     id: ingredientText
                     text: modelData
-                    width: parent.width - deleteIcon.width - units.gu(1)
+                    width: parent.width - dragModeLoader.width - (listRoot.dragMode ? units.gu(1) : 0)
                     autoSize: true
-                    // Keys.onReleased: editItem(index, text)
                     onTextChanged: editItem(index, text)
                     anchors {
                         verticalCenter: parent.verticalCenter
                     }
                 }
+            }
+            leadingActions: ListItemActions {
+                actions: [
+                    Action {
+                        iconName: "delete"
+                        onTriggered: {
+                            listRoot.deleteItem(index);
+                            listRoot.refresh();
+                        }
+                    }
+                ]
+            }
+            trailingActions: ListItemActions {
+                actions: [
+                    Action {
+                        iconName: "sort-listitem"
+                        onTriggered: {
+                            listRoot.dragMode = true;
+                        }
+                    }
+                ]
             }
         }
     }
