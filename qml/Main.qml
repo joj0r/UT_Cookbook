@@ -45,13 +45,14 @@ MainView {
     property string selectedCategory
     property var categoryRecipes
 
+    property var selectedRecipe: -1
+
     property bool loading: false
     property bool startupSync: false
 
-
     Settings {
-      id: settings
-      property real labelSize: 3
+        id: settings
+        property real labelSize: 3
     }
 
     function setCategory(category) {
@@ -316,6 +317,7 @@ MainView {
             }
             onOpenCategory: category => {
                 selectedCategory = category ? category : i18n.tr("Uncategorized");
+                root.selectedRecipe = -1
                 DB.getCategoryRecipesMeta(selectedCategory).then(recipes => {
                     var incubator = pageLayout.addPageToNextColumn(cookbooksPage, categoryPageComponent, {
                         "category": selectedCategory
@@ -342,29 +344,21 @@ MainView {
             CategoryPage {
                 id: categoryPage
                 recipes: root.categoryRecipes
+                selectedIndex: root.selectedRecipe
                 loading: root.loading
                 startupSync: root.startupSync
                 bottomEdgeComp: bottomEdgeComponent
+                onSelect: index => root.selectedRecipe = index
                 onRefresh: {
                     root.loading = true;
                     root.update();
                 }
                 onOpenRecipe: id => {
                     DB.getRecipe(id).then(recipe => {
-                        var incubator = pageLayout.addPageToNextColumn(categoryPage, recipePageComponent, {
+                        pageLayout.addPageToNextColumn(categoryPage, recipePageComponent, {
                             "id": parseInt(id),
                             "recipe": recipe
                         });
-                        if (incubator && incubator.status == Component.Loading) {
-                            incubator.onStatusChanged = function (status) {
-                                if (status == Component.Ready) {
-                                    // connect page's destruction to decrement model
-                                    incubator.object.Component.destruction.connect(function () {
-                                        categoryPage.selectedIndex = -1;
-                                    });
-                                }
-                            };
-                        }
                     });
                 }
                 onDeleteRecipe: recipe => {
@@ -384,6 +378,10 @@ MainView {
                 id: recipePage
                 labelSize: settings.labelSize
                 headingSubtitle: i18n.tr('Viewing Recipe')
+                onBack: {
+                    pageLayout.removePages(recipePage);
+                    root.selectedRecipe = -1
+                }
                 onEditRecipe: recipe => {
                     var incubator = pageLayout.addPageToCurrentColumn(recipePage, editRecipePageComponent, {
                         "id": parseInt(id),

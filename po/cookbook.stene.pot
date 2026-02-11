@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cookbook.stene\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-11 09:06+0000\n"
+"POT-Creation-Date: 2026-02-11 11:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,11 +33,11 @@ msgstr ""
 msgid "Download recipe from URL"
 msgstr ""
 
-#: ../qml/CategoryPage.qml:43
+#: ../qml/CategoryPage.qml:45
 msgid "Category"
 msgstr ""
 
-#: ../qml/CategoryPage.qml:54
+#: ../qml/CategoryPage.qml:56
 msgid "Add recipe"
 msgstr ""
 
@@ -57,7 +57,7 @@ msgstr ""
 msgid "Head over to settings and add a Nextcloud account"
 msgstr ""
 
-#: ../qml/CookbooksPage.qml:186 ../qml/Main.qml:318
+#: ../qml/CookbooksPage.qml:186 ../qml/Main.qml:319
 msgid "Uncategorized"
 msgstr ""
 
@@ -69,7 +69,7 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: ../qml/EditRecipePage.qml:115 ../qml/Main.qml:475 ../qml/Main.qml:496
+#: ../qml/EditRecipePage.qml:115 ../qml/Main.qml:473 ../qml/Main.qml:494
 msgid "Delete"
 msgstr ""
 
@@ -81,43 +81,43 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
-#: ../qml/EditRecipePage.qml:228 ../qml/RecipePage.qml:236
+#: ../qml/EditRecipePage.qml:228 ../qml/RecipePage.qml:245
 msgid "Cooking times"
 msgstr ""
 
-#: ../qml/EditRecipePage.qml:238 ../qml/RecipePage.qml:247
+#: ../qml/EditRecipePage.qml:238 ../qml/RecipePage.qml:256
 msgid "Preparation"
 msgstr ""
 
-#: ../qml/EditRecipePage.qml:248 ../qml/RecipePage.qml:256
+#: ../qml/EditRecipePage.qml:248 ../qml/RecipePage.qml:265
 msgid "Cooking"
 msgstr ""
 
-#: ../qml/EditRecipePage.qml:258 ../qml/RecipePage.qml:265
+#: ../qml/EditRecipePage.qml:258 ../qml/RecipePage.qml:274
 msgid "Total time"
 msgstr ""
 
-#: ../qml/EditRecipePage.qml:284 ../qml/RecipePage.qml:290
+#: ../qml/EditRecipePage.qml:284 ../qml/RecipePage.qml:299
 msgid "Ingredients"
 msgstr ""
 
-#: ../qml/EditRecipePage.qml:382 ../qml/RecipePage.qml:441
+#: ../qml/EditRecipePage.qml:382 ../qml/RecipePage.qml:450
 msgid "Marked ingredients could not be recalculated due to incorrect syntax."
 msgstr ""
 
-#: ../qml/EditRecipePage.qml:405 ../qml/RecipePage.qml:465
+#: ../qml/EditRecipePage.qml:405 ../qml/RecipePage.qml:474
 msgid "Instructions"
 msgstr ""
 
-#: ../qml/EditRecipePage.qml:491 ../qml/RecipePage.qml:49
+#: ../qml/EditRecipePage.qml:491 ../qml/RecipePage.qml:51
 msgid "h"
 msgstr ""
 
-#: ../qml/EditRecipePage.qml:510 ../qml/RecipePage.qml:51
+#: ../qml/EditRecipePage.qml:510 ../qml/RecipePage.qml:53
 msgid "min"
 msgstr ""
 
-#: ../qml/EditRecipePage.qml:529 ../qml/RecipePage.qml:53
+#: ../qml/EditRecipePage.qml:529 ../qml/RecipePage.qml:55
 msgid "s"
 msgstr ""
 
@@ -129,82 +129,82 @@ msgstr ""
 msgid "Logs"
 msgstr ""
 
-#: ../qml/Main.qml:83
+#: ../qml/Main.qml:84
 msgid "Error syncing recipes"
 msgstr ""
 
-#: ../qml/Main.qml:110 ../qml/Main.qml:133 ../qml/Main.qml:165
-#: ../qml/Main.qml:196
+#: ../qml/Main.qml:111 ../qml/Main.qml:134 ../qml/Main.qml:166
+#: ../qml/Main.qml:197
 msgid "Status"
 msgstr ""
 
 #. TRANSLATORS: %1 is the recipe name
-#: ../qml/Main.qml:112
+#: ../qml/Main.qml:113
 msgid "Recipe '%1' successfully imported"
 msgstr ""
 
-#: ../qml/Main.qml:118 ../qml/Main.qml:150 ../qml/Main.qml:180
-#: ../qml/Main.qml:209
+#: ../qml/Main.qml:119 ../qml/Main.qml:151 ../qml/Main.qml:181
+#: ../qml/Main.qml:210
 msgid "Error"
 msgstr ""
 
 #. TRANSLATORS: %1 is the recipe name
-#: ../qml/Main.qml:135
+#: ../qml/Main.qml:136
 msgid "Recipe %1 successfully saved"
 msgstr ""
 
 #. TRANSLATORS: %1 is the recipe name
-#: ../qml/Main.qml:167
+#: ../qml/Main.qml:168
 msgid "Recipe '%1' successfully saved"
 msgstr ""
 
 #. TRANSLATORS: %1 is the recipe name
-#: ../qml/Main.qml:198
+#: ../qml/Main.qml:199
 msgid "Recipe '%1' successfully deleted"
 msgstr ""
 
-#: ../qml/Main.qml:386
+#: ../qml/Main.qml:380
 msgid "Viewing Recipe"
 msgstr ""
 
-#: ../qml/Main.qml:413
+#: ../qml/Main.qml:411
 msgid "Editing Recipe"
 msgstr ""
 
-#: ../qml/Main.qml:441
+#: ../qml/Main.qml:439
 msgid "Creating new Recipe"
 msgstr ""
 
-#: ../qml/Main.qml:465
+#: ../qml/Main.qml:463
 msgid "Abort"
 msgstr ""
 
-#: ../qml/Main.qml:466
+#: ../qml/Main.qml:464
 msgid "Abort editing"
 msgstr ""
 
-#: ../qml/Main.qml:467
+#: ../qml/Main.qml:465
 msgid "Are you sure you want to abort editing, and discard all changes?"
 msgstr ""
 
-#: ../qml/Main.qml:476 ../qml/Main.qml:497
+#: ../qml/Main.qml:474 ../qml/Main.qml:495
 msgid "Delete recipe"
 msgstr ""
 
 #. TRANSLATORS: %1 is the recipe name
-#: ../qml/Main.qml:478 ../qml/Main.qml:499
+#: ../qml/Main.qml:476 ../qml/Main.qml:497
 msgid "Are you sure you want to delete recipe %1?"
 msgstr ""
 
-#: ../qml/Main.qml:515
+#: ../qml/Main.qml:513
 msgid "Ok"
 msgstr ""
 
-#: ../qml/Main.qml:516
+#: ../qml/Main.qml:514
 msgid "Accounts"
 msgstr ""
 
-#: ../qml/Main.qml:517
+#: ../qml/Main.qml:515
 msgid ""
 "To change account, you have to disable this account from the Lomiri System "
 "Settings.\n"
@@ -212,15 +212,15 @@ msgid ""
 "Then you can restart this app, and add a new account here."
 msgstr ""
 
-#: ../qml/Main.qml:524
+#: ../qml/Main.qml:522
 msgid "Purge"
 msgstr ""
 
-#: ../qml/Main.qml:525 ../qml/SettingsPage.qml:253
+#: ../qml/Main.qml:523 ../qml/SettingsPage.qml:253
 msgid "Purge recipe database"
 msgstr ""
 
-#: ../qml/Main.qml:526
+#: ../qml/Main.qml:524
 msgid ""
 "Are you sure you want to purge the local recipe database?\n"
 "\n"
@@ -228,7 +228,7 @@ msgid ""
 "on the upstream server."
 msgstr ""
 
-#: ../qml/Main.qml:636
+#: ../qml/Main.qml:634
 msgid "Create new recipe"
 msgstr ""
 
@@ -236,19 +236,19 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: ../qml/RecipePage.qml:107
+#: ../qml/RecipePage.qml:116
 msgid "Edit"
 msgstr ""
 
-#: ../qml/RecipePage.qml:531
+#: ../qml/RecipePage.qml:540
 msgid "Metadata"
 msgstr ""
 
-#: ../qml/RecipePage.qml:549
+#: ../qml/RecipePage.qml:558
 msgid "Date created"
 msgstr ""
 
-#: ../qml/RecipePage.qml:575
+#: ../qml/RecipePage.qml:584
 msgid "Date modified"
 msgstr ""
 

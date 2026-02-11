@@ -32,8 +32,10 @@ Page {
     property string headingSubtitle
     property var ingredients
     property bool recalculated: recipe.recipeYield != yield
+
     signal editRecipe(var recipe)
     signal refreshRecipe(var recipe)
+    signal back
 
     property int labelSize
     property int spacing: units.gu(labelSize / 2)
@@ -94,6 +96,13 @@ Page {
         id: pageHeader
         title: recipe.name
         subtitle: headingSubtitle
+        leadingActionBar.actions: [
+            Action {
+                iconName: "back"
+                text: "Back"
+                onTriggered: back()
+            }
+        ]
         ActionBar {
             anchors {
                 top: parent.top
@@ -472,7 +481,7 @@ Page {
                 }
             }
             Column {
-                   spacing: recipePage.spacing
+                spacing: recipePage.spacing
                 anchors {
                     right: parent.right
                     left: parent.left

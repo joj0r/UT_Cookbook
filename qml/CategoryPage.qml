@@ -31,8 +31,10 @@ Page {
     property var recipes
     property bool loading
     property bool startupSync
-    property int selectedIndex: -1
+    property int selectedIndex
     property Component bottomEdgeComp
+
+    signal select(int index)
     signal refresh
     signal openRecipe(int id)
     signal deleteRecipe(var recipe)
@@ -126,7 +128,7 @@ Page {
                             anchors.fill: parent
                             onClicked: {
                                 openRecipe(modelData.id);
-                                selectedIndex = index;
+                                select(index)
                             }
                         }
 
