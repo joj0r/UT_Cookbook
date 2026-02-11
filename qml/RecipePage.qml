@@ -35,6 +35,9 @@ Page {
     signal editRecipe(var recipe)
     signal refreshRecipe(var recipe)
 
+    property int labelSize
+    property int spacing: units.gu(labelSize / 2)
+
     // Component.onCompleted: ingredients = updateAllIngredients(recipe.recipeIngredient, yield, yield)
 
     onRecipeChanged: ingredients = updateAllIngredients(recipe.recipeIngredient, yield, yield)
@@ -140,7 +143,7 @@ Page {
 
         Column {
             id: mainLayout
-            spacing: units.gu(1)
+            spacing: recipePage.spacing
             anchors {
                 top: recipeImage.bottom
                 left: parent.left
@@ -176,6 +179,7 @@ Page {
                 id: descriptionLabel
                 text: recipe.description
                 wrapMode: Text.WordWrap
+                textSize: recipePage.labelSize
                 anchors {
                     left: parent.left
                     right: parent.right
@@ -208,6 +212,7 @@ Page {
                             Label {
                                 id: keywordLabel
                                 text: modelData
+                                textSize: recipePage.labelSize
                                 anchors {
                                     horizontalCenter: parent.horizontalCenter
                                     verticalCenter: parent.verticalCenter
@@ -229,6 +234,7 @@ Page {
                 }
                 Label {
                     text: i18n.tr("Cooking times")
+                    textSize: recipePage.labelSize
                     font.bold: true
                     color: theme.palette.disabled.baseText
                     anchors {
@@ -282,6 +288,7 @@ Page {
                     }
                     Label {
                         text: i18n.tr("Ingredients")
+                        textSize: recipePage.labelSize
                         font.bold: true
                         color: theme.palette.disabled.baseText
                         anchors {
@@ -316,9 +323,10 @@ Page {
                             onClicked: handleYieldChange(false)
                         }
                     }
-                    TextInput {
-                        color: theme.palette.normal.baseText
+                    Label {
+                        // color: theme.palette.normal.baseText
                         text: recipePage.yield
+                        textSize: recipePage.labelSize
                         anchors {
                             verticalCenter: parent.verticalCenter
                         }
@@ -339,6 +347,7 @@ Page {
                 }
             }
             Column {
+                spacing: recipePage.spacing
                 anchors {
                     right: parent.right
                     left: parent.left
@@ -350,7 +359,7 @@ Page {
                         property string statusColor: done ? theme.palette.disabled.baseText : theme.palette.normal.baseText
                         property bool recalcError: modelData.value === undefined
                         width: parent.width
-                        height: ingredientText.contentHeight + units.gu(1)
+                        height: ingredientText.contentHeight
                         color: theme.palette.normal.background
                         MouseArea {
                             anchors.fill: parent
@@ -370,13 +379,11 @@ Page {
                         }
                         Row {
                             spacing: units.gu(1)
-                            topPadding: units.gu(1)
-                            bottomPadding: units.gu(1)
                             width: parent.width
                             Icon {
                                 id: checkBox
                                 name: done ? "select" : "select-none"
-                                height: units.gu(2)
+                                height: units.gu(recipePage.labelSize - 1)
                                 width: height
                                 color: statusColor
                                 anchors {
@@ -393,6 +400,7 @@ Page {
                             Label {
                                 id: ingredientValue
                                 text: recalcError ? "" : modelData.value
+                                textSize: recipePage.labelSize
                                 wrapMode: Text.WordWrap
                                 color: statusColor
                                 font.weight: recalculated ? Font.Normal : Font.Light
@@ -403,6 +411,7 @@ Page {
                             Label {
                                 id: ingredientText
                                 text: modelData.ingredient
+                                textSize: recipePage.labelSize
                                 width: parent.width - ingredientValue.width - infoIconLoader.width - checkBox.width - units.gu(1)
                                 wrapMode: Text.WordWrap
                                 color: statusColor
@@ -430,6 +439,7 @@ Page {
                     Label {
                         id: infoIngredientsText
                         text: i18n.tr("Marked ingredients could not be recalculated due to incorrect syntax.")
+                        textSize: recipePage.labelSize
                         wrapMode: Text.WordWrap
                         width: parent.width - infoSectionIcon.width - units.gu(1)
                         color: theme.palette.disabled.baseText
@@ -453,6 +463,7 @@ Page {
                 }
                 Label {
                     text: i18n.tr("Instructions")
+                    textSize: recipePage.labelSize
                     font.bold: true
                     color: theme.palette.disabled.baseText
                     anchors {
@@ -461,6 +472,7 @@ Page {
                 }
             }
             Column {
+                   spacing: recipePage.spacing
                 anchors {
                     right: parent.right
                     left: parent.left
@@ -471,7 +483,7 @@ Page {
                         property bool done: false
                         property string statusColor: done ? theme.palette.disabled.baseText : theme.palette.normal.baseText
                         width: parent.width
-                        height: instructionText.contentHeight + units.gu(1)
+                        height: instructionText.contentHeight
                         color: theme.palette.normal.background
                         MouseArea {
                             anchors.fill: parent
@@ -479,11 +491,10 @@ Page {
                         }
                         Row {
                             spacing: units.gu(1)
-                            topPadding: units.gu(1)
-                            bottomPadding: units.gu(1)
                             width: parent.width
                             Label {
                                 text: (index + 1) + "."
+                                textSize: recipePage.labelSize
                                 width: units.gu(3)
                                 color: statusColor
                                 anchors {
@@ -493,6 +504,7 @@ Page {
                             Label {
                                 id: instructionText
                                 text: modelData
+                                textSize: recipePage.labelSize
                                 wrapMode: Text.WordWrap
                                 width: parent.width - units.gu(4)
                                 color: statusColor
@@ -517,6 +529,7 @@ Page {
                 }
                 Label {
                     text: i18n.tr("Metadata")
+                    textSize: recipePage.labelSize
                     font.bold: true
                     color: theme.palette.disabled.baseText
                     anchors {
@@ -534,7 +547,8 @@ Page {
                 }
                 Label {
                     text: i18n.tr("Date created")
-                    width: units.gu(12)
+                    textSize: recipePage.labelSize
+                    width: parent.width / 2
                     color: theme.palette.disabled.baseText
                     anchors {
                         verticalCenter: parent.verticalCenter
@@ -542,6 +556,7 @@ Page {
                 }
                 Label {
                     text: new Date(recipe.dateCreated).toLocaleString(Locale.ShortFormat)
+                    textSize: recipePage.labelSize
                     height: units.gu(2)
                     anchors {
                         verticalCenter: parent.verticalCenter
@@ -558,7 +573,8 @@ Page {
                 }
                 Label {
                     text: i18n.tr("Date modified")
-                    width: units.gu(12)
+                    textSize: recipePage.labelSize
+                    width: parent.width / 2
                     color: theme.palette.disabled.baseText
                     anchors {
                         verticalCenter: parent.verticalCenter
@@ -566,6 +582,7 @@ Page {
                 }
                 Label {
                     text: new Date(recipe.dateModified).toLocaleString(Locale.ShortFormat)
+                    textSize: recipePage.labelSize
                     height: units.gu(2)
                     anchors {
                         verticalCenter: parent.verticalCenter
@@ -579,7 +596,6 @@ Page {
         id: timeComponent
         Row {
             spacing: units.gu(1)
-            height: units.gu(3)
             anchors {
                 left: parent.left
                 right: parent.right
@@ -587,7 +603,8 @@ Page {
             }
             Label {
                 text: label
-                width: units.gu(14)
+                textSize: recipePage.labelSize
+                width: parent.width / 2
                 color: theme.palette.disabled.baseText
                 anchors {
                     verticalCenter: parent.verticalCenter
@@ -595,6 +612,7 @@ Page {
             }
             Label {
                 text: formatDuration(time)
+                textSize: recipePage.labelSize
                 height: units.gu(2)
                 anchors {
                     verticalCenter: parent.verticalCenter

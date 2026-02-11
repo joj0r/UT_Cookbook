@@ -14,6 +14,9 @@ Page {
     id: settingsPage
     property bool startupSync
     property bool showTestAccount
+
+    property var settingsUI
+
     signal addAccount
     signal useTest
     signal purgeDatabase
@@ -172,6 +175,46 @@ Page {
                                 verticalCenter: parent.verticalCenter
                             }
                         }
+                    }
+                }
+            }
+            Rectangle {
+                height: units.gu(0.125)
+                color: theme.palette.normal.foreground
+                anchors {
+                    left: parent.left
+                    right: parent.right
+                }
+            }
+            Row {
+                spacing: units.gu(1)
+                Icon {
+                    name: "view-fullscreen"
+                    height: units.gu(3)
+                    width: height
+                    anchors {
+                        verticalCenter: parent.verticalCenter
+                    }
+                }
+                Label {
+                    text: i18n.tr("Recipe page UI")
+                    textSize: Label.Large
+                }
+            }
+            Row {
+                width: parent.width
+                Label {
+                    text: i18n.tr("Large text size")
+                    width: parent.width - textSwitch.width - units.gu(4)
+                }
+                Switch {
+                    id: textSwitch
+                    checked: settingsUI.labelSize === 4
+                    onClicked: {
+                        if (settingsUI.labelSize === 3)
+                            settingsUI.labelSize = 4;
+                        else
+                            settingsUI.labelSize = 3;
                     }
                 }
             }

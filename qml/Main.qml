@@ -44,8 +44,15 @@ MainView {
     property var logs
     property string selectedCategory
     property var categoryRecipes
+
     property bool loading: false
     property bool startupSync: false
+
+
+    Settings {
+      id: settings
+      property real labelSize: 3
+    }
 
     function setCategory(category) {
         DB.getCategoryRecipesMeta(category).then(recipes => {
@@ -375,6 +382,7 @@ MainView {
             id: recipePageComponent
             RecipePage {
                 id: recipePage
+                labelSize: settings.labelSize
                 headingSubtitle: i18n.tr('Viewing Recipe')
                 onEditRecipe: recipe => {
                     var incubator = pageLayout.addPageToCurrentColumn(recipePage, editRecipePageComponent, {
@@ -567,6 +575,7 @@ MainView {
             SettingsPage {
                 id: settingsPage
                 startupSync: root.startupSync
+                settingsUI: settings
                 onAddAccount: {
                     accountModel.requestAccess(accountModel.applicationId + "_nextcloud", {});
                 }
