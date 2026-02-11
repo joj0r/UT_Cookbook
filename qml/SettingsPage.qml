@@ -148,25 +148,32 @@ Page {
             Loader {
                 id: testAccountLoader
                 sourceComponent: settingsPage.showTestAccount ? testAccountComp : undefined
-                width: parent.width
+                anchors {
+                    left: parent.left
+                    right: parent.right
+                }
             }
             Component {
                 id: testAccountComp
                 Column {
                     padding: 0
                     spacing: units.gu(2)
+                    anchors {
+                        left: parent.left
+                        right: parent.right
+                    }
                     Rectangle {
                         height: units.gu(0.125)
                         color: theme.palette.normal.foreground
                         anchors {
                             left: parent.left
-                            leftMargin: -units.gu(2)
                             right: parent.right
                         }
                     }
                     Row {
                         id: testAccount
                         spacing: units.gu(2)
+                        leftPadding: units.gu(2)
 
                         Button {
                             text: i18n.tr("Use test account")
