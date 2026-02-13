@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cookbook.stene\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-11 11:27+0000\n"
+"POT-Creation-Date: 2026-02-13 20:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,8 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../qml/AboutPage.qml:20 ../qml/CookbooksPage.qml:60
+#: ../qml/AboutPage.qml:20 ../qml/CategoryPage.qml:79
+#: ../qml/CookbooksPage.qml:60
 msgid "About"
 msgstr ""
 
@@ -33,20 +34,21 @@ msgstr ""
 msgid "Download recipe from URL"
 msgstr ""
 
-#: ../qml/CategoryPage.qml:45
+#: ../qml/CategoryPage.qml:50
 msgid "Category"
 msgstr ""
 
-#: ../qml/CategoryPage.qml:56
+#: ../qml/CategoryPage.qml:74 ../qml/CookbooksPage.qml:55
+#: ../qml/SettingsPage.qml:30
+msgid "Settings"
+msgstr ""
+
+#: ../qml/CategoryPage.qml:84
 msgid "Add recipe"
 msgstr ""
 
 #: ../qml/CookbooksPage.qml:43
 msgid "Cookbooks"
-msgstr ""
-
-#: ../qml/CookbooksPage.qml:55 ../qml/SettingsPage.qml:30
-msgid "Settings"
 msgstr ""
 
 #: ../qml/CookbooksPage.qml:99
@@ -57,7 +59,8 @@ msgstr ""
 msgid "Head over to settings and add a Nextcloud account"
 msgstr ""
 
-#: ../qml/CookbooksPage.qml:186 ../qml/Main.qml:319
+#: ../qml/CookbooksPage.qml:186 ../qml/CookbooksSide.qml:115
+#: ../qml/Main.qml:311
 msgid "Uncategorized"
 msgstr ""
 
@@ -69,7 +72,7 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: ../qml/EditRecipePage.qml:115 ../qml/Main.qml:473 ../qml/Main.qml:494
+#: ../qml/EditRecipePage.qml:115 ../qml/Main.qml:449 ../qml/Main.qml:470
 msgid "Delete"
 msgstr ""
 
@@ -129,82 +132,82 @@ msgstr ""
 msgid "Logs"
 msgstr ""
 
-#: ../qml/Main.qml:84
+#: ../qml/Main.qml:85
 msgid "Error syncing recipes"
 msgstr ""
 
-#: ../qml/Main.qml:111 ../qml/Main.qml:134 ../qml/Main.qml:166
-#: ../qml/Main.qml:197
+#: ../qml/Main.qml:112 ../qml/Main.qml:135 ../qml/Main.qml:167
+#: ../qml/Main.qml:198
 msgid "Status"
 msgstr ""
 
 #. TRANSLATORS: %1 is the recipe name
-#: ../qml/Main.qml:113
+#: ../qml/Main.qml:114
 msgid "Recipe '%1' successfully imported"
 msgstr ""
 
-#: ../qml/Main.qml:119 ../qml/Main.qml:151 ../qml/Main.qml:181
-#: ../qml/Main.qml:210
+#: ../qml/Main.qml:120 ../qml/Main.qml:152 ../qml/Main.qml:182
+#: ../qml/Main.qml:211
 msgid "Error"
 msgstr ""
 
 #. TRANSLATORS: %1 is the recipe name
-#: ../qml/Main.qml:136
+#: ../qml/Main.qml:137
 msgid "Recipe %1 successfully saved"
 msgstr ""
 
 #. TRANSLATORS: %1 is the recipe name
-#: ../qml/Main.qml:168
+#: ../qml/Main.qml:169
 msgid "Recipe '%1' successfully saved"
 msgstr ""
 
 #. TRANSLATORS: %1 is the recipe name
-#: ../qml/Main.qml:199
+#: ../qml/Main.qml:200
 msgid "Recipe '%1' successfully deleted"
 msgstr ""
 
-#: ../qml/Main.qml:380
+#: ../qml/Main.qml:356
 msgid "Viewing Recipe"
 msgstr ""
 
-#: ../qml/Main.qml:411
+#: ../qml/Main.qml:387
 msgid "Editing Recipe"
 msgstr ""
 
-#: ../qml/Main.qml:439
+#: ../qml/Main.qml:415
 msgid "Creating new Recipe"
 msgstr ""
 
-#: ../qml/Main.qml:463
+#: ../qml/Main.qml:439
 msgid "Abort"
 msgstr ""
 
-#: ../qml/Main.qml:464
+#: ../qml/Main.qml:440
 msgid "Abort editing"
 msgstr ""
 
-#: ../qml/Main.qml:465
+#: ../qml/Main.qml:441
 msgid "Are you sure you want to abort editing, and discard all changes?"
 msgstr ""
 
-#: ../qml/Main.qml:474 ../qml/Main.qml:495
+#: ../qml/Main.qml:450 ../qml/Main.qml:471
 msgid "Delete recipe"
 msgstr ""
 
 #. TRANSLATORS: %1 is the recipe name
-#: ../qml/Main.qml:476 ../qml/Main.qml:497
+#: ../qml/Main.qml:452 ../qml/Main.qml:473
 msgid "Are you sure you want to delete recipe %1?"
 msgstr ""
 
-#: ../qml/Main.qml:513
+#: ../qml/Main.qml:489
 msgid "Ok"
 msgstr ""
 
-#: ../qml/Main.qml:514
+#: ../qml/Main.qml:490
 msgid "Accounts"
 msgstr ""
 
-#: ../qml/Main.qml:515
+#: ../qml/Main.qml:491
 msgid ""
 "To change account, you have to disable this account from the Lomiri System "
 "Settings.\n"
@@ -212,15 +215,15 @@ msgid ""
 "Then you can restart this app, and add a new account here."
 msgstr ""
 
-#: ../qml/Main.qml:522
+#: ../qml/Main.qml:498
 msgid "Purge"
 msgstr ""
 
-#: ../qml/Main.qml:523 ../qml/SettingsPage.qml:253
+#: ../qml/Main.qml:499 ../qml/SettingsPage.qml:253
 msgid "Purge recipe database"
 msgstr ""
 
-#: ../qml/Main.qml:524
+#: ../qml/Main.qml:500
 msgid ""
 "Are you sure you want to purge the local recipe database?\n"
 "\n"
@@ -228,7 +231,7 @@ msgid ""
 "on the upstream server."
 msgstr ""
 
-#: ../qml/Main.qml:634
+#: ../qml/Main.qml:610
 msgid "Create new recipe"
 msgstr ""
 
