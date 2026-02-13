@@ -32,6 +32,8 @@ Page {
     property bool loading
     property bool startupSync
     property int selectedIndex
+
+    property Component leftSide
     property Component bottomEdgeComp
 
     signal openSettings
@@ -46,6 +48,19 @@ Page {
         id: header
         title: category
         subtitle: i18n.tr("Category")
+        leadingActionBar.actions: [
+            Action {
+                iconName: "navigation-menu"
+                text: "Category menu"
+                onTriggered: {
+                    if (leftSideLoader.sourceComponent) {
+                        leftSideLoader.sourceComponent = undefined;
+                    } else {
+                        leftSideLoader.sourceComponent = leftSide;
+                    }
+                }
+            }
+        ]
         ActionBar {
             anchors {
                 top: parent.top
@@ -80,6 +95,17 @@ Page {
                 bottom: parent.bottom
                 bottomMargin: -units.gu(0.1)
             }
+        }
+    }
+
+    Loader {
+        id: leftSideLoader
+        width: parent.width * 0.7
+        height: units.gu(50)
+        z: 10
+        anchors {
+            left: parent.left
+            top: header.bottom
         }
     }
 

@@ -301,38 +301,16 @@ MainView {
             }
         ]
 
-        CookbooksPage {
-            id: cookbooksPage
-            categories: root.categories
-            loading: root.loading
-            startupSync: root.startupSync
-            bottomEdgeComp: bottomEdgeComponent
-            onRefresh: {
-                root.loading = true;
-                root.update();
+        Component {
+          id: cookbooksSideComp
+            CookbooksSide {
+                id: cookbooksSide
+                categories: root.categories
+                onOpenCategory: category => {
+                    selectedCategory = category ? category : i18n.tr("Uncategorized");
+                    root.selectedRecipe = -1;
+                }
             }
-            onOpenCategory: category => {
-                selectedCategory = category ? category : i18n.tr("Uncategorized");
-                root.selectedRecipe = -1
-                DB.getCategoryRecipesMeta(selectedCategory).then(recipes => {
-                    var incubator = pageLayout.addPageToNextColumn(cookbooksPage, categoryPageComponent, {
-                        "category": selectedCategory
-                    });
-
-                    if (incubator && incubator.status == Component.Loading) {
-                        incubator.onStatusChanged = function (status) {
-                            if (status == Component.Ready) {
-                                // connect page's destruction to decrement model
-                                incubator.object.Component.destruction.connect(function () {
-                                    cookbooksPage.selectedIndex = -1;
-                                });
-                            }
-                        };
-                    }
-                });
-            }
-            onOpenSettings: pageLayout.addPageToCurrentColumn(cookbooksPage, settingsPageComp)
-            onOpenAbout: pageLayout.addPageToCurrentColumn(cookbooksPage, aboutPageComp)
         }
 
             CategoryPage {
@@ -342,6 +320,7 @@ MainView {
                 selectedIndex: root.selectedRecipe
                 loading: root.loading
                 startupSync: root.startupSync
+                leftSide: cookbooksSideComp
                 bottomEdgeComp: bottomEdgeComponent
                 onSelect: index => root.selectedRecipe = index
                 onRefresh: {
