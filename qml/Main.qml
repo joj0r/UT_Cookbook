@@ -42,7 +42,7 @@ MainView {
 
     property var categories
     property var logs
-    property string selectedCategory
+    property string selectedCategory: "All recipes"
     property var categoryRecipes
 
     property var selectedRecipe: -1
@@ -268,7 +268,7 @@ MainView {
     AdaptivePageLayout {
         id: pageLayout
         anchors.fill: parent
-        primaryPage: cookbooksPage
+        primaryPage: categoryPage
 
         layouts: [
             PageColumnsLayout {
@@ -288,18 +288,14 @@ MainView {
             PageColumnsLayout {
                 when: width > units.gu(140)
                 PageColumn {
-                    minimumWidth: units.gu(30)
-                    maximumWidth: units.gu(60)
+                    minimumWidth: units.gu(60)
+                    maximumWidth: units.gu(80)
                     preferredWidth: units.gu(40)
                 }
                 PageColumn {
                     fillWidth: true
                     minimumWidth: units.gu(30)
-                    preferredWidth: units.gu(40)
-                }
-                PageColumn {
-                    fillWidth: true
-                    minimumWidth: units.gu(30)
+                    maximumWidth: units.gu(100)
                     preferredWidth: units.gu(40)
                 }
             }
@@ -339,10 +335,9 @@ MainView {
             onOpenAbout: pageLayout.addPageToCurrentColumn(cookbooksPage, aboutPageComp)
         }
 
-        Component {
-            id: categoryPageComponent
             CategoryPage {
                 id: categoryPage
+                category: root.selectedCategory
                 recipes: root.categoryRecipes
                 selectedIndex: root.selectedRecipe
                 loading: root.loading
@@ -369,8 +364,9 @@ MainView {
                         }
                     });
                 }
+                onOpenSettings: pageLayout.addPageToCurrentColumn(categoryPage, settingsPageComp)
+                onOpenAbout: pageLayout.addPageToCurrentColumn(categoryPage, aboutPageComp)
             }
-        }
 
         Component {
             id: recipePageComponent
@@ -380,7 +376,7 @@ MainView {
                 headingSubtitle: i18n.tr('Viewing Recipe')
                 onBack: {
                     pageLayout.removePages(recipePage);
-                    root.selectedRecipe = -1
+                    root.selectedRecipe = -1;
                 }
                 onEditRecipe: recipe => {
                     var incubator = pageLayout.addPageToCurrentColumn(recipePage, editRecipePageComponent, {

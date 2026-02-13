@@ -34,6 +34,9 @@ Page {
     property int selectedIndex
     property Component bottomEdgeComp
 
+    signal openSettings
+    signal openAbout
+
     signal select(int index)
     signal refresh
     signal openRecipe(int id)
@@ -51,6 +54,16 @@ Page {
                 rightMargin: units.gu(1)
             }
             actions: [
+                Action {
+                    iconName: "settings"
+                    text: i18n.tr("Settings")
+                    onTriggered: openSettings()
+                },
+                Action {
+                    iconName: "info"
+                    text: i18n.tr("About")
+                    onTriggered: openAbout()
+                },
                 Action {
                     iconName: "add"
                     text: i18n.tr("Add recipe")
@@ -128,7 +141,7 @@ Page {
                             anchors.fill: parent
                             onClicked: {
                                 openRecipe(modelData.id);
-                                select(index)
+                                select(index);
                             }
                         }
 
