@@ -306,8 +306,9 @@ MainView {
             CookbooksSide {
                 id: cookbooksSide
                 categories: root.categories
+                selectedCategory: root.selectedCategory
                 onOpenCategory: category => {
-                    selectedCategory = category ? category : i18n.tr("Uncategorized");
+                    root.selectedCategory = category ? category : i18n.tr("Uncategorized");
                     root.selectedRecipe = -1;
                 }
             }

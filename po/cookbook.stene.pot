@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cookbook.stene\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-13 20:08+0000\n"
+"POT-Creation-Date: 2026-02-14 16:21+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -59,8 +59,8 @@ msgstr ""
 msgid "Head over to settings and add a Nextcloud account"
 msgstr ""
 
-#: ../qml/CookbooksPage.qml:186 ../qml/CookbooksSide.qml:115
-#: ../qml/Main.qml:311
+#: ../qml/CookbooksPage.qml:186 ../qml/CookbooksSide.qml:136
+#: ../qml/Main.qml:312
 msgid "Uncategorized"
 msgstr ""
 
@@ -72,7 +72,7 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: ../qml/EditRecipePage.qml:115 ../qml/Main.qml:449 ../qml/Main.qml:470
+#: ../qml/EditRecipePage.qml:115 ../qml/Main.qml:450 ../qml/Main.qml:471
 msgid "Delete"
 msgstr ""
 
@@ -166,48 +166,48 @@ msgstr ""
 msgid "Recipe '%1' successfully deleted"
 msgstr ""
 
-#: ../qml/Main.qml:356
+#: ../qml/Main.qml:357
 msgid "Viewing Recipe"
 msgstr ""
 
-#: ../qml/Main.qml:387
+#: ../qml/Main.qml:388
 msgid "Editing Recipe"
 msgstr ""
 
-#: ../qml/Main.qml:415
+#: ../qml/Main.qml:416
 msgid "Creating new Recipe"
 msgstr ""
 
-#: ../qml/Main.qml:439
+#: ../qml/Main.qml:440
 msgid "Abort"
 msgstr ""
 
-#: ../qml/Main.qml:440
+#: ../qml/Main.qml:441
 msgid "Abort editing"
 msgstr ""
 
-#: ../qml/Main.qml:441
+#: ../qml/Main.qml:442
 msgid "Are you sure you want to abort editing, and discard all changes?"
 msgstr ""
 
-#: ../qml/Main.qml:450 ../qml/Main.qml:471
+#: ../qml/Main.qml:451 ../qml/Main.qml:472
 msgid "Delete recipe"
 msgstr ""
 
 #. TRANSLATORS: %1 is the recipe name
-#: ../qml/Main.qml:452 ../qml/Main.qml:473
+#: ../qml/Main.qml:453 ../qml/Main.qml:474
 msgid "Are you sure you want to delete recipe %1?"
 msgstr ""
 
-#: ../qml/Main.qml:489
+#: ../qml/Main.qml:490
 msgid "Ok"
 msgstr ""
 
-#: ../qml/Main.qml:490
+#: ../qml/Main.qml:491
 msgid "Accounts"
 msgstr ""
 
-#: ../qml/Main.qml:491
+#: ../qml/Main.qml:492
 msgid ""
 "To change account, you have to disable this account from the Lomiri System "
 "Settings.\n"
@@ -215,15 +215,15 @@ msgid ""
 "Then you can restart this app, and add a new account here."
 msgstr ""
 
-#: ../qml/Main.qml:498
+#: ../qml/Main.qml:499
 msgid "Purge"
 msgstr ""
 
-#: ../qml/Main.qml:499 ../qml/SettingsPage.qml:253
+#: ../qml/Main.qml:500 ../qml/SettingsPage.qml:253
 msgid "Purge recipe database"
 msgstr ""
 
-#: ../qml/Main.qml:500
+#: ../qml/Main.qml:501
 msgid ""
 "Are you sure you want to purge the local recipe database?\n"
 "\n"
@@ -231,7 +231,7 @@ msgid ""
 "on the upstream server."
 msgstr ""
 
-#: ../qml/Main.qml:610
+#: ../qml/Main.qml:611
 msgid "Create new recipe"
 msgstr ""
 

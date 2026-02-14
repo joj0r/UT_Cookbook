@@ -100,12 +100,12 @@ Page {
 
     Loader {
         id: leftSideLoader
-        width: parent.width * 0.7
-        height: units.gu(50)
         z: 10
         anchors {
-            left: parent.left
             top: header.bottom
+            left: parent.left
+            right: parent.right
+            bottom: parent.bottom
         }
     }
 
