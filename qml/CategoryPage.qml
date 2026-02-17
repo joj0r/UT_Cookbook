@@ -140,24 +140,10 @@ Page {
                 anchors {
                     fill: parent
                 }
-                LomiriShape {
-                    anchors {
-                        fill: parent
-                        topMargin: units.gu(0.5)
-                        bottomMargin: units.gu(0.5)
-                        leftMargin: units.gu(1)
-                        rightMargin: units.gu(1)
-                    }
-                    color: theme.palette.normal.foreground
-                    LomiriShape {
-                        anchors {
-                            fill: parent
-                            topMargin: units.gu(0.125)
-                            bottomMargin: units.gu(0.125)
-                            leftMargin: units.gu(0.125)
-                            rightMargin: units.gu(0.125)
-                        }
-                        color: theme.palette.normal.background
+                LomiriBorder {
+                    anchors.fill: parent
+                    child: LomiriShape {
+                        anchors.fill: parent
                         LomiriShape {
                             anchors.fill: parent
                             color: theme.palette.normal.selection

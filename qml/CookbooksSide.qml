@@ -50,65 +50,38 @@ Rectangle {
         }
     }
 
-    LomiriShape {
+    LomiriBorder {
         width: parent.width * 0.7
         height: parent.height - units.gu(2)
         anchors {
             left: parent.left
             top: parent.top
-            topMargin: units.gu(0.5)
-            bottomMargin: units.gu(0.5)
-            leftMargin: units.gu(1)
-            rightMargin: units.gu(1)
         }
-        color: theme.palette.normal.foreground
-        LomiriShape {
+        child: LomiriListView {
+            id: categoriesModelView
+            model: categories
+
             anchors {
                 fill: parent
-                topMargin: units.gu(0.125)
-                bottomMargin: units.gu(0.125)
-                leftMargin: units.gu(0.125)
-                rightMargin: units.gu(0.125)
+                topMargin: units.gu(0.5)
+                bottomMargin: units.gu(3)
             }
-            color: theme.palette.normal.background
 
-            LomiriListView {
-                id: categoriesModelView
-                model: categories
+            delegate: ListItem {
+                id: listItem
+                width: categoriesModelView.width
+                height: units.gu(8)
+                divider.visible: false
 
-                anchors {
-                    fill: parent
-                    topMargin: units.gu(0.5)
-                    bottomMargin: units.gu(3)
-                }
-
-                delegate: ListItem {
-                    id: listItem
-                    width: categoriesModelView.width
-                    height: units.gu(8)
-                    divider.visible: false
-
-                    Rectangle {
+                Rectangle {
+                    anchors.fill: parent
+                    color: theme.palette.normal.background
+                    LomiriBorder {
                         anchors.fill: parent
-                        color: theme.palette.normal.background
-                        LomiriShape {
-                            anchors {
-                                fill: parent
-                                topMargin: units.gu(0.5)
-                                bottomMargin: units.gu(0.5)
-                                leftMargin: units.gu(1)
-                                rightMargin: units.gu(1)
-                            }
-                            color: theme.palette.normal.foreground
+                        child: LomiriShape {
+                            anchors.fill: parent
                             LomiriShape {
-                                anchors {
-                                    fill: parent
-                                    topMargin: units.gu(0.125)
-                                    bottomMargin: units.gu(0.125)
-                                    leftMargin: units.gu(0.125)
-                                    rightMargin: units.gu(0.125)
-                                }
-                                color: theme.palette.normal.background
+                                anchors.fill: parent
                                 LomiriShape {
                                     anchors.fill: parent
                                     color: theme.palette.normal.selection
