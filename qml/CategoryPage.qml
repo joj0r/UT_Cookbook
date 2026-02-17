@@ -33,10 +33,10 @@ Page {
     property bool startupSync
     property int selectedIndex
 
-    property Component leftSide
+    property Component cookbooksSide
+    property Component settingsSide
     property Component bottomEdgeComp
 
-    signal openSettings
     signal openAbout
 
     signal select(int index)
@@ -53,10 +53,10 @@ Page {
                 iconName: "navigation-menu"
                 text: "Category menu"
                 onTriggered: {
-                    if (leftSideLoader.sourceComponent) {
+                    if (leftSideLoader.sourceComponent === cookbooksSide) {
                         leftSideLoader.sourceComponent = undefined;
                     } else {
-                        leftSideLoader.sourceComponent = leftSide;
+                        leftSideLoader.sourceComponent = cookbooksSide;
                     }
                 }
             }
@@ -72,7 +72,13 @@ Page {
                 Action {
                     iconName: "settings"
                     text: i18n.tr("Settings")
-                    onTriggered: openSettings()
+                    onTriggered: {
+                        if (leftSideLoader.sourceComponent === settingsSide) {
+                            leftSideLoader.sourceComponent = undefined;
+                        } else {
+                            leftSideLoader.sourceComponent = settingsSide;
+                        }
+                    }
                 },
                 Action {
                     iconName: "info"

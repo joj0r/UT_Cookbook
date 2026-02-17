@@ -321,7 +321,8 @@ MainView {
                 selectedIndex: root.selectedRecipe
                 loading: root.loading
                 startupSync: root.startupSync
-                leftSide: cookbooksSideComp
+                cookbooksSide: cookbooksSideComp
+                settingsSide: settingsSideComp
                 bottomEdgeComp: bottomEdgeComponent
                 onSelect: index => root.selectedRecipe = index
                 onRefresh: {
@@ -344,7 +345,6 @@ MainView {
                         }
                     });
                 }
-                onOpenSettings: pageLayout.addPageToCurrentColumn(categoryPage, settingsPageComp)
                 onOpenAbout: pageLayout.addPageToCurrentColumn(categoryPage, aboutPageComp)
             }
 
@@ -544,6 +544,31 @@ MainView {
             }
         }
 
+        Component {
+            id: settingsSideComp
+            SettingsSide {
+                id: settingsSide
+                settingsUI: settings
+                onAddAccount: {
+                    accountModel.requestAccess(accountModel.applicationId + "_nextcloud", {});
+                }
+                onOpenAccountInfo: {
+                    PopupUtils.open(accountInfoComp, root);
+                }
+                showTestAccount: root.showTestAccount
+                onUseTest: {
+                    serverModel.clear();
+                    serverModel.append({
+                        "auth": Qt.btoa(Testing.account.username + ":" + Testing.account.password),
+                        "serverUrl": Testing.account.serverUrl
+                    });
+                    startSync();
+                }
+                onPurgeDatabase: {
+                    PopupUtils.open(purgeDatabaseComp, root);
+                }
+            }
+        }
         Component {
             id: settingsPageComp
             SettingsPage {
