@@ -253,6 +253,6 @@ Page {
         anchors {
             bottom: parent.bottom
         }
-        sourceComponent: categoryPage.bottomEdgeComp
+        sourceComponent: leftSideLoader.sourceComponent ? undefined : categoryPage.bottomEdgeComp
     }
 }
