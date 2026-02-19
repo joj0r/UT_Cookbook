@@ -124,6 +124,7 @@ Page {
     LomiriListView {
         id: categoryListView
         model: recipes
+        interactive: leftSideLoader.sourceComponent ? false : true
 
         pullToRefresh {
             enabled: true
