@@ -29,9 +29,16 @@ Rectangle {
         onClicked: settingsSide.parent.sourceComponent = undefined
     }
 
+    function calculateHeight(contentHeight) {
+        if (contentHeight > settingsSide.height - units.gu(5)) {
+            return settingsSide.height - units.gu(2.75);
+        }
+        return contentHeight + units.gu(2);
+    }
+
     LomiriBorder {
         width: parent.width * 0.8
-        height: mainSettingsColumn.height + units.gu(2)
+        height: calculateHeight(mainSettingsColumn.height)
         anchors {
             right: parent.right
             top: parent.top
@@ -39,6 +46,7 @@ Rectangle {
         Flickable {
             anchors.fill: parent
             contentHeight: mainSettingsColumn.height
+            clip: true
 
             Column {
                 id: mainSettingsColumn
