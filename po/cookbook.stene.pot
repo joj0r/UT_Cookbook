@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cookbook.stene\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-14 16:21+0000\n"
+"POT-Creation-Date: 2026-02-19 20:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,12 +17,12 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../qml/AboutPage.qml:20 ../qml/CategoryPage.qml:79
+#: ../qml/AboutPage.qml:20 ../qml/CategoryPage.qml:85
 #: ../qml/CookbooksPage.qml:60
 msgid "About"
 msgstr ""
 
-#: ../qml/AboutPage.qml:54 cookbook.desktop.in.h:1
+#: ../qml/AboutPage.qml:54 ../qml/AboutSide.qml:67 cookbook.desktop.in.h:1
 msgid "Cookbook"
 msgstr ""
 
@@ -34,7 +34,7 @@ msgstr ""
 msgid "Download recipe from URL"
 msgstr ""
 
-#: ../qml/CategoryPage.qml:50
+#: ../qml/CategoryPage.qml:49
 msgid "Category"
 msgstr ""
 
@@ -43,7 +43,7 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: ../qml/CategoryPage.qml:84
+#: ../qml/CategoryPage.qml:96
 msgid "Add recipe"
 msgstr ""
 
@@ -59,7 +59,7 @@ msgstr ""
 msgid "Head over to settings and add a Nextcloud account"
 msgstr ""
 
-#: ../qml/CookbooksPage.qml:186 ../qml/CookbooksSide.qml:136
+#: ../qml/CookbooksPage.qml:186 ../qml/CookbooksSide.qml:119
 #: ../qml/Main.qml:312
 msgid "Uncategorized"
 msgstr ""
@@ -84,31 +84,31 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
-#: ../qml/EditRecipePage.qml:228 ../qml/RecipePage.qml:245
+#: ../qml/EditRecipePage.qml:228 ../qml/RecipePage.qml:237
 msgid "Cooking times"
 msgstr ""
 
-#: ../qml/EditRecipePage.qml:238 ../qml/RecipePage.qml:256
+#: ../qml/EditRecipePage.qml:238 ../qml/RecipePage.qml:248
 msgid "Preparation"
 msgstr ""
 
-#: ../qml/EditRecipePage.qml:248 ../qml/RecipePage.qml:265
+#: ../qml/EditRecipePage.qml:248 ../qml/RecipePage.qml:257
 msgid "Cooking"
 msgstr ""
 
-#: ../qml/EditRecipePage.qml:258 ../qml/RecipePage.qml:274
+#: ../qml/EditRecipePage.qml:258 ../qml/RecipePage.qml:266
 msgid "Total time"
 msgstr ""
 
-#: ../qml/EditRecipePage.qml:284 ../qml/RecipePage.qml:299
+#: ../qml/EditRecipePage.qml:284 ../qml/RecipePage.qml:291
 msgid "Ingredients"
 msgstr ""
 
-#: ../qml/EditRecipePage.qml:382 ../qml/RecipePage.qml:450
+#: ../qml/EditRecipePage.qml:382 ../qml/RecipePage.qml:442
 msgid "Marked ingredients could not be recalculated due to incorrect syntax."
 msgstr ""
 
-#: ../qml/EditRecipePage.qml:405 ../qml/RecipePage.qml:474
+#: ../qml/EditRecipePage.qml:405 ../qml/RecipePage.qml:466
 msgid "Instructions"
 msgstr ""
 
@@ -219,7 +219,7 @@ msgstr ""
 msgid "Purge"
 msgstr ""
 
-#: ../qml/Main.qml:500 ../qml/SettingsPage.qml:253
+#: ../qml/Main.qml:500 ../qml/SettingsPage.qml:253 ../qml/SettingsSide.qml:237
 msgid "Purge recipe database"
 msgstr ""
 
@@ -231,7 +231,7 @@ msgid ""
 "on the upstream server."
 msgstr ""
 
-#: ../qml/Main.qml:611
+#: ../qml/Main.qml:636
 msgid "Create new recipe"
 msgstr ""
 
@@ -243,15 +243,15 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: ../qml/RecipePage.qml:540
+#: ../qml/RecipePage.qml:532
 msgid "Metadata"
 msgstr ""
 
-#: ../qml/RecipePage.qml:558
+#: ../qml/RecipePage.qml:550
 msgid "Date created"
 msgstr ""
 
-#: ../qml/RecipePage.qml:584
+#: ../qml/RecipePage.qml:576
 msgid "Date modified"
 msgstr ""
 
@@ -259,27 +259,27 @@ msgstr ""
 msgid "See logs"
 msgstr ""
 
-#: ../qml/SettingsPage.qml:87
+#: ../qml/SettingsPage.qml:87 ../qml/SettingsSide.qml:71
 msgid "Account"
 msgstr ""
 
-#: ../qml/SettingsPage.qml:102
+#: ../qml/SettingsPage.qml:102 ../qml/SettingsSide.qml:86
 msgid "Add Nextcloud account"
 msgstr ""
 
-#: ../qml/SettingsPage.qml:179
+#: ../qml/SettingsPage.qml:179 ../qml/SettingsSide.qml:163
 msgid "Use test account"
 msgstr ""
 
-#: ../qml/SettingsPage.qml:207
+#: ../qml/SettingsPage.qml:207 ../qml/SettingsSide.qml:191
 msgid "Recipe page UI"
 msgstr ""
 
-#: ../qml/SettingsPage.qml:214
+#: ../qml/SettingsPage.qml:214 ../qml/SettingsSide.qml:198
 msgid "Large text size"
 msgstr ""
 
-#: ../qml/SettingsPage.qml:248
+#: ../qml/SettingsPage.qml:248 ../qml/SettingsSide.qml:232
 msgid "Danger zone"
 msgstr ""
 
