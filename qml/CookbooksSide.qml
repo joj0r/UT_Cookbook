@@ -50,21 +50,31 @@ Rectangle {
         }
     }
 
+    function calculateHeight(contentHeight) {
+        if (contentHeight > cookbooksSide.height - units.gu(5)) {
+            return cookbooksSide.height - units.gu(2.75);
+        }
+        return contentHeight + units.gu(2);
+    }
+
     LomiriBorder {
         width: parent.width * 0.7
-        height: parent.height - units.gu(2)
+        height: calculateHeight(categoriesModelView.contentItem.childrenRect.height)
         anchors {
             left: parent.left
             top: parent.top
         }
-        child: LomiriListView {
+        LomiriListView {
             id: categoriesModelView
             model: categories
+            clip: true
 
             anchors {
                 fill: parent
+                leftMargin: units.gu(0.5)
+                rightMargin: units.gu(0.5)
                 topMargin: units.gu(0.5)
-                bottomMargin: units.gu(3)
+                bottomMargin: units.gu(0.5)
             }
 
             delegate: ListItem {
