@@ -35,9 +35,8 @@ Page {
 
     property Component cookbooksSide
     property Component settingsSide
+    property Component aboutSide
     property Component bottomEdgeComp
-
-    signal openAbout
 
     signal select(int index)
     signal refresh
@@ -48,6 +47,7 @@ Page {
         id: header
         title: category
         subtitle: i18n.tr("Category")
+        z: 10
         leadingActionBar.actions: [
             Action {
                 iconName: "navigation-menu"
@@ -83,7 +83,13 @@ Page {
                 Action {
                     iconName: "info"
                     text: i18n.tr("About")
-                    onTriggered: openAbout()
+                    onTriggered: {
+                        if (leftSideLoader.sourceComponent === aboutSide) {
+                            leftSideLoader.sourceComponent = undefined;
+                        } else {
+                            leftSideLoader.sourceComponent = aboutSide;
+                        }
+                    }
                 },
                 Action {
                     iconName: "add"
@@ -106,7 +112,7 @@ Page {
 
     Loader {
         id: leftSideLoader
-        z: 10
+        z: 9
         anchors {
             top: header.bottom
             left: parent.left

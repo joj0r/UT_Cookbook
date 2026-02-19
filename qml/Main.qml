@@ -323,6 +323,7 @@ MainView {
                 startupSync: root.startupSync
                 cookbooksSide: cookbooksSideComp
                 settingsSide: settingsSideComp
+                aboutSide: aboutSideComp
                 bottomEdgeComp: bottomEdgeComponent
                 onSelect: index => root.selectedRecipe = index
                 onRefresh: {
@@ -345,7 +346,6 @@ MainView {
                         }
                     });
                 }
-                onOpenAbout: pageLayout.addPageToCurrentColumn(categoryPage, aboutPageComp)
             }
 
         Component {
@@ -531,8 +531,8 @@ MainView {
         }
 
         Component {
-            id: aboutPageComp
-            AboutPage {}
+            id: aboutSideComp
+            AboutSide {}
         }
 
         Component {
