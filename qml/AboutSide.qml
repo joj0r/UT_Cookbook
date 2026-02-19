@@ -21,22 +21,31 @@ Rectangle {
         onClicked: aboutSide.parent.sourceComponent = undefined
     }
 
+    function calculateHeight(contentHeight) {
+        if (contentHeight > aboutSide.height - units.gu(3)) {
+            return aboutSide.height - units.gu(3);
+        }
+        return contentHeight;
+    }
+
     LomiriBorder {
         width: parent.width - units.gu(2)
-        height: parent.height - units.gu(2)
+        height: calculateHeight(mainColumn.height)
         anchors {
             right: parent.right
             top: parent.top
         }
-        child: Flickable {
+        Flickable {
             anchors.fill: parent
             contentHeight: mainColumn.height
             clip: true
 
+            anchors.bottomMargin: units.gu(0.5)
+
             Column {
                 id: mainColumn
-                spacing: units.gu(1.5)
-                padding: units.gu(2)
+                spacing: units.gu(0)
+                topPadding: units.gu(2)
                 anchors {
                     top: parent.top
                     right: parent.right
@@ -100,14 +109,6 @@ Rectangle {
                         horizontalCenter: parent.horizontalCenter
                     }
                 }
-                Rectangle {
-                    height: units.gu(0.125)
-                    color: theme.palette.normal.foreground
-                    anchors {
-                        left: parent.left
-                        right: parent.right
-                    }
-                }
                 ListModel {
                     id: linkModel
                     ListElement {
@@ -128,7 +129,8 @@ Rectangle {
                     Rectangle {
                         width: parent.width
                         height: sourceRow.height + units.gu(2)
-                        color: theme.palette.normal.background
+                        // color: theme.palette.normal.background
+                        color: "transparent"
                         anchors {
                             left: parent.left
                             right: parent.right
@@ -137,12 +139,28 @@ Rectangle {
                             anchors.fill: parent
                             onClicked: Qt.openUrlExternally(link)
                         }
+                        Rectangle {
+                            height: units.gu(0.125)
+                            color: theme.palette.normal.foreground
+                            anchors {
+                                left: parent.left
+                                right: parent.right
+                                top: parent.top
+                            }
+                        }
                         Row {
                             id: sourceRow
                             spacing: units.gu(1)
                             leftPadding: units.gu(2)
                             width: parent.width - units.gu(2)
+                            anchors {
+                                verticalCenter: parent.verticalCenter
+                            }
                             Column {
+                                anchors {
+                                    leftMargin: units.gu(0.5)
+                                    rightMargin: units.gu(0.5)
+                                }
                                 width: parent.width - units.gu(5)
                                 Label {
                                     text: title
@@ -160,15 +178,6 @@ Rectangle {
                                 anchors {
                                     verticalCenter: parent.verticalCenter
                                 }
-                            }
-                        }
-                        Rectangle {
-                            height: units.gu(0.125)
-                            color: theme.palette.normal.foreground
-                            anchors {
-                                left: parent.left
-                                right: parent.right
-                                bottom: parent.bottom
                             }
                         }
                     }
