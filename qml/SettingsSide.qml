@@ -157,14 +157,7 @@ Rectangle {
                             left: parent.left
                             right: parent.right
                         }
-                        Rectangle {
-                            height: units.gu(0.125)
-                            color: theme.palette.normal.foreground
-                            anchors {
-                                left: parent.left
-                                right: parent.right
-                            }
-                        }
+                        SeparationLine {}
                         Row {
                             id: testAccount
                             spacing: units.gu(2)
@@ -180,14 +173,7 @@ Rectangle {
                         }
                     }
                 }
-                Rectangle {
-                    height: units.gu(0.125)
-                    color: theme.palette.normal.foreground
-                    anchors {
-                        left: parent.left
-                        right: parent.right
-                    }
-                }
+                SeparationLine {}
                 Row {
                     spacing: units.gu(1)
                     Icon {
@@ -220,14 +206,7 @@ Rectangle {
                         }
                     }
                 }
-                Rectangle {
-                    height: units.gu(0.125)
-                    color: theme.palette.normal.foreground
-                    anchors {
-                        left: parent.left
-                        right: parent.right
-                    }
-                }
+                SeparationLine {}
                 Row {
                     spacing: units.gu(1)
                     Icon {

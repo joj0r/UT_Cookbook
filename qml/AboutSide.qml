@@ -150,15 +150,7 @@ Rectangle {
                             anchors.fill: parent
                             onClicked: Qt.openUrlExternally(link)
                         }
-                        Rectangle {
-                            height: units.gu(0.125)
-                            color: theme.palette.normal.foreground
-                            anchors {
-                                left: parent.left
-                                right: parent.right
-                                top: parent.top
-                            }
-                        }
+                        SeparationLine {}
                         Row {
                             id: sourceRow
                             spacing: units.gu(1)

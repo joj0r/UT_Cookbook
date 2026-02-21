@@ -33,13 +33,5 @@ Column {
         }
     }
 
-    Rectangle {
-        id: sepLine
-        height: units.gu(0.125)
-        color: theme.palette.normal.foreground
-        anchors {
-            left: parent.left
-            right: parent.right
-        }
-    }
+    SeparationLine {}
 }
