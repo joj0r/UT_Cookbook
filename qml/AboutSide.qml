@@ -35,8 +35,19 @@ Rectangle {
             right: parent.right
             top: parent.top
         }
+
+        SideHeader {
+            id: header
+            title: i18n.tr("About")
+        }
+
         Flickable {
-            anchors.fill: parent
+            anchors {
+                top: header.bottom
+                left: parent.left
+                right: parent.right
+                bottom: parent.bottom
+            }
             contentHeight: mainColumn.height
             clip: true
 
