@@ -324,6 +324,7 @@ MainView {
                 cookbooksSide: cookbooksSideComp
                 settingsSide: settingsSideComp
                 aboutSide: aboutSideComp
+                logsSide: logsSideComp
                 bottomEdgeComp: bottomEdgeComponent
                 onSelect: index => root.selectedRecipe = index
                 onRefresh: {
@@ -536,8 +537,8 @@ MainView {
         }
 
         Component {
-            id: logsPageComp
-            LogsPage {
+            id: logsSideComp
+            LogsSide {
                 logs: root.logs
                 startupSync: root.startupSync
                 onUpdateLogs: DB.getLogs().then(logs => root.logs = logs)
@@ -593,7 +594,7 @@ MainView {
                 onPurgeDatabase: {
                     PopupUtils.open(purgeDatabaseComp, root);
                 }
-                onOpenLogs: pageLayout.addPageToCurrentColumn(settingsPage, logsPageComp)
+                onOpenLogs: pageLayout.addPageToCurrentColumn(settingsPage, logsSideComp)
             }
         }
     }

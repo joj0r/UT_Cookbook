@@ -14,7 +14,7 @@ Rectangle {
     id: aboutSide
 
     anchors.fill: parent
-    color: theme.palette.normal.background
+    color: "transparent"
 
     MouseArea {
         anchors.fill: parent

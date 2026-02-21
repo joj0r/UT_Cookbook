@@ -37,6 +37,7 @@ Page {
     property Component settingsSide
     property Component aboutSide
     property Component bottomEdgeComp
+    property Component logsSide
 
     signal select(int index)
     signal refresh
@@ -92,9 +93,15 @@ Page {
                     }
                 },
                 Action {
-                    iconName: "add"
-                    text: i18n.tr("Add recipe")
-                    onTriggered: bottomEdgeLoader.item.commit()
+                    iconName: "document-preview"
+                    text: i18n.tr("See logs")
+                    onTriggered: {
+                        if (leftSideLoader.sourceComponent === logsSide) {
+                            leftSideLoader.sourceComponent = undefined;
+                        } else {
+                            leftSideLoader.sourceComponent = logsSide;
+                        }
+                    }
                 }
             ]
         }
