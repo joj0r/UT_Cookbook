@@ -59,18 +59,27 @@ Rectangle {
 
     LomiriBorder {
         width: parent.width * 0.7
-        height: calculateHeight(categoriesModelView.contentItem.childrenRect.height)
+        height: calculateHeight(categoriesModelView.contentItem.childrenRect.height + header.height)
         anchors {
             left: parent.left
             top: parent.top
         }
+
+        SideHeader {
+            id: header
+            title: i18n.tr("Categories")
+        }
+
         LomiriListView {
             id: categoriesModelView
             model: categories
             clip: true
 
             anchors {
-                fill: parent
+                top: header.bottom
+                left: parent.left
+                right: parent.right
+                bottom: parent.bottom
                 leftMargin: units.gu(0.5)
                 rightMargin: units.gu(0.5)
                 topMargin: units.gu(0.5)
