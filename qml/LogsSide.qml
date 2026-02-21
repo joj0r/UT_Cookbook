@@ -59,13 +59,13 @@ Rectangle {
     function getStatusColor(status) {
         switch (status) {
         case "OK":
-            return "green";
+            return LomiriColors.green;
         case "ERROR":
-            return "red";
+            return LomiriColors.red;
         case "WARNING":
-            return "yellow";
+            return LomiriColors.orange;
         default:
-            return "white";
+            return theme.palette.normal.baseText;
         }
     }
 
