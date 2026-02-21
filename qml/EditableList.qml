@@ -93,6 +93,7 @@ Column {
                 actions: [
                     Action {
                         iconName: "delete"
+                        text: i18n.tr("Delete")
                         onTriggered: {
                             listRoot.deleteItem(index);
                             listRoot.refresh();

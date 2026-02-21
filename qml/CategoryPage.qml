@@ -160,10 +160,10 @@ Page {
 
         anchors {
             top: header.bottom
-            topMargin: units.gu(0.5)
             left: parent.left
             right: parent.right
             bottom: parent.bottom
+            topMargin: units.gu(0.5)
             bottomMargin: units.gu(3)
         }
 
@@ -228,43 +228,10 @@ Page {
             }
 
             leadingActions: ListItemActions {
-                delegate: Rectangle {
-                    width: units.gu(10)
-                    color: theme.palette.normal.background
-                    LomiriShape {
-                        anchors {
-                            fill: parent
-                            topMargin: units.gu(0.5)
-                            bottomMargin: units.gu(0.5)
-                            leftMargin: units.gu(1)
-                            rightMargin: units.gu(1)
-                        }
-                        color: theme.palette.normal.foreground
-                        LomiriShape {
-                            color: theme.palette.normal.background
-                            anchors {
-                                fill: parent
-                                topMargin: units.gu(0.125)
-                                bottomMargin: units.gu(0.125)
-                                leftMargin: units.gu(0.125)
-                                rightMargin: units.gu(0.125)
-                            }
-                            Icon {
-                                name: "delete"
-                                width: units.gu(3)
-                                height: width
-                                color: "red"
-                                anchors {
-                                    horizontalCenter: parent.horizontalCenter
-                                    verticalCenter: parent.verticalCenter
-                                }
-                            }
-                        }
-                    }
-                }
                 actions: [
                     Action {
                         iconName: "delete"
+                        text: i18n.tr("Delete")
                         onTriggered: {
                             deleteRecipe(modelData);
                         }
