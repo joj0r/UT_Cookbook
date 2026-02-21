@@ -302,7 +302,7 @@ MainView {
         ]
 
         Component {
-          id: cookbooksSideComp
+            id: cookbooksSideComp
             CookbooksSide {
                 id: cookbooksSide
                 categories: root.categories
@@ -314,40 +314,40 @@ MainView {
             }
         }
 
-            CategoryPage {
-                id: categoryPage
-                category: root.selectedCategory
-                recipes: root.categoryRecipes
-                selectedIndex: root.selectedRecipe
-                loading: root.loading
-                startupSync: root.startupSync
-                cookbooksSide: cookbooksSideComp
-                settingsSide: settingsSideComp
-                aboutSide: aboutSideComp
-                logsSide: logsSideComp
-                bottomEdgeComp: bottomEdgeComponent
-                onSelect: index => root.selectedRecipe = index
-                onRefresh: {
-                    root.loading = true;
-                    root.update();
-                }
-                onOpenRecipe: id => {
-                    DB.getRecipe(id).then(recipe => {
-                        pageLayout.addPageToNextColumn(categoryPage, recipePageComponent, {
-                            "id": parseInt(id),
-                            "recipe": recipe
-                        });
-                    });
-                }
-                onDeleteRecipe: recipe => {
-                    PopupUtils.open(deleteRecipeDialogFromCategoryPage, root, {
-                        "object": {
-                            "recipe": recipe,
-                            "page": root
-                        }
-                    });
-                }
+        CategoryPage {
+            id: categoryPage
+            category: root.selectedCategory
+            recipes: root.categoryRecipes
+            selectedIndex: root.selectedRecipe
+            loading: root.loading
+            startupSync: root.startupSync
+            cookbooksSide: cookbooksSideComp
+            settingsSide: settingsSideComp
+            aboutSide: aboutSideComp
+            logsSide: logsSideComp
+            bottomEdgeComp: bottomEdgeComponent
+            onSelect: index => root.selectedRecipe = index
+            onRefresh: {
+                root.loading = true;
+                root.update();
             }
+            onOpenRecipe: id => {
+                DB.getRecipe(id).then(recipe => {
+                    pageLayout.addPageToNextColumn(categoryPage, recipePageComponent, {
+                        "id": parseInt(id),
+                        "recipe": recipe
+                    });
+                });
+            }
+            onDeleteRecipe: recipe => {
+                PopupUtils.open(deleteRecipeDialogFromCategoryPage, root, {
+                    "object": {
+                        "recipe": recipe,
+                        "page": root
+                    }
+                });
+            }
+        }
 
         Component {
             id: recipePageComponent
@@ -568,33 +568,6 @@ MainView {
                 onPurgeDatabase: {
                     PopupUtils.open(purgeDatabaseComp, root);
                 }
-            }
-        }
-        Component {
-            id: settingsPageComp
-            SettingsPage {
-                id: settingsPage
-                startupSync: root.startupSync
-                settingsUI: settings
-                onAddAccount: {
-                    accountModel.requestAccess(accountModel.applicationId + "_nextcloud", {});
-                }
-                onOpenAccountInfo: {
-                    PopupUtils.open(accountInfoComp, root);
-                }
-                showTestAccount: root.showTestAccount
-                onUseTest: {
-                    serverModel.clear();
-                    serverModel.append({
-                        "auth": Qt.btoa(Testing.account.username + ":" + Testing.account.password),
-                        "serverUrl": Testing.account.serverUrl
-                    });
-                    startSync();
-                }
-                onPurgeDatabase: {
-                    PopupUtils.open(purgeDatabaseComp, root);
-                }
-                onOpenLogs: pageLayout.addPageToCurrentColumn(settingsPage, logsSideComp)
             }
         }
     }
