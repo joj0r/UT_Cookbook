@@ -119,29 +119,11 @@ Column {
         width: parent.width
         layoutDirection: Qt.RightToLeft
         Button {
+            text: i18n.tr("Add")
+            width: parent.width
             onClicked: {
                 listRoot.addItem('');
                 listRoot.refresh();
-            }
-            Row {
-                spacing: units.gu(1)
-                padding: units.gu(1)
-                Icon {
-                    height: units.gu(2)
-                    width: height
-                    color: theme.palette.normal.baseText
-                    name: "list-add"
-                    anchors {
-                        verticalCenter: parent.verticalCenter
-                    }
-                }
-                Label {
-                    text: i18n.tr("Add")
-                    width: contentWidth
-                    anchors {
-                        verticalCenter: parent.verticalCenter
-                    }
-                }
             }
         }
     }

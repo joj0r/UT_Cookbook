@@ -30,7 +30,7 @@ LomiriShape {
         leftMargin: units.gu(1)
         rightMargin: units.gu(1)
     }
-    color: theme.palette.normal.foreground
+    color: theme.palette.normal.base
     LomiriShape {
         anchors {
             fill: parent

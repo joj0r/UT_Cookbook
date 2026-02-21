@@ -7,8 +7,8 @@ import Qt.labs.settings 1.0
 
 Rectangle {
     id: sepLine
-    height: units.gu(0.250)
-    color: theme.palette.normal.foreground
+    height: units.gu(0.125)
+    color: theme.palette.normal.base
     anchors {
         left: parent.left
         right: parent.right
