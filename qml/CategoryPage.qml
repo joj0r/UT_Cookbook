@@ -48,7 +48,6 @@ Page {
         id: header
         title: category
         subtitle: i18n.tr("Category")
-        z: 10
         leadingActionBar.actions: [
             Action {
                 iconName: "navigation-menu"

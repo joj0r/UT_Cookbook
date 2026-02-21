@@ -16,6 +16,12 @@ Rectangle {
     anchors.fill: parent
     color: "transparent"
 
+    Rectangle {
+      anchors.fill: parent
+      color: theme.palette.normal.overlay
+      opacity: 0.75
+    }
+
     MouseArea {
         anchors.fill: parent
         onClicked: aboutSide.parent.sourceComponent = undefined
