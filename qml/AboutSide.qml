@@ -30,7 +30,7 @@ Rectangle {
 
     LomiriBorder {
         width: parent.width - units.gu(2)
-        height: calculateHeight(mainColumn.height)
+        height: calculateHeight(mainColumn.height + header.height)
         anchors {
             right: parent.right
             top: parent.top
