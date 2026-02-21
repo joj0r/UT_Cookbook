@@ -65,6 +65,26 @@ Page {
         ActionBar {
             anchors {
                 top: parent.top
+                left: parent.left
+                topMargin: units.gu(1)
+            }
+            actions: [
+                Action {
+                    iconName: "navigation-menu"
+                    text: "Category menu"
+                    onTriggered: {
+                        if (leftSideLoader.sourceComponent === cookbooksSide) {
+                            leftSideLoader.sourceComponent = undefined;
+                        } else {
+                            leftSideLoader.sourceComponent = cookbooksSide;
+                        }
+                    }
+                }
+            ]
+        }
+        ActionBar {
+            anchors {
+                top: parent.top
                 right: parent.right
                 topMargin: units.gu(1)
                 rightMargin: units.gu(1)
