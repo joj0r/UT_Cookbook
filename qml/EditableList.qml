@@ -112,18 +112,25 @@ Column {
                 ]
             }
         }
-    }
-    Row {
-        spacing: units.gu(1)
-        topPadding: units.gu(1)
-        width: parent.width
-        layoutDirection: Qt.RightToLeft
-        Button {
-            text: i18n.tr("Add")
+        footer: Row {
+            spacing: units.gu(1)
+            topPadding: units.gu(1)
             width: parent.width
-            onClicked: {
-                listRoot.addItem('');
-                listRoot.refresh();
+            TextArea {
+                id: newIngredientText
+                width: parent.width - newIngredientButton.width - units.gu(1)
+                autoSize: true
+            }
+            Button {
+              id: newIngredientButton
+                text: i18n.tr("Add")
+                width: units.gu(8)
+                onClicked: {
+                    listRoot.addItem(newIngredientText.text);
+                    newIngredientText.text = "";
+                    listRoot.refresh();
+                    newIngredientText.forceActiveFocus()
+                }
             }
         }
     }
