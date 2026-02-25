@@ -33,7 +33,7 @@ Rectangle {
     Rectangle {
       anchors.fill: parent
       color: theme.palette.normal.overlay
-      opacity: 0.75
+      opacity: 0.5
     }
 
     Component.onCompleted: updateLogs()
