@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cookbook.stene\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-19 20:00+0000\n"
+"POT-Creation-Date: 2026-02-25 19:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,12 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../qml/AboutPage.qml:20 ../qml/CategoryPage.qml:85
-#: ../qml/CookbooksPage.qml:60
+#: ../qml/AboutSide.qml:47 ../qml/CategoryPage.qml:105
 msgid "About"
 msgstr ""
 
-#: ../qml/AboutPage.qml:54 ../qml/AboutSide.qml:67 cookbook.desktop.in.h:1
+#: ../qml/AboutSide.qml:84 cookbook.desktop.in.h:1
 msgid "Cookbook"
 msgstr ""
 
@@ -34,33 +33,28 @@ msgstr ""
 msgid "Download recipe from URL"
 msgstr ""
 
-#: ../qml/CategoryPage.qml:49
+#: ../qml/CategoryPage.qml:50
 msgid "Category"
 msgstr ""
 
-#: ../qml/CategoryPage.qml:74 ../qml/CookbooksPage.qml:55
-#: ../qml/SettingsPage.qml:30
+#: ../qml/CategoryPage.qml:94 ../qml/SettingsSide.qml:55
 msgid "Settings"
 msgstr ""
 
-#: ../qml/CategoryPage.qml:96
-msgid "Add recipe"
+#: ../qml/CategoryPage.qml:116
+msgid "See logs"
 msgstr ""
 
-#: ../qml/CookbooksPage.qml:43
-msgid "Cookbooks"
+#: ../qml/CategoryPage.qml:234 ../qml/EditRecipePage.qml:115
+#: ../qml/EditableList.qml:96 ../qml/Main.qml:450 ../qml/Main.qml:471
+msgid "Delete"
 msgstr ""
 
-#: ../qml/CookbooksPage.qml:99
-msgid "No recipes here.."
+#: ../qml/CookbooksSide.qml:76
+msgid "Categories"
 msgstr ""
 
-#: ../qml/CookbooksPage.qml:106
-msgid "Head over to settings and add a Nextcloud account"
-msgstr ""
-
-#: ../qml/CookbooksPage.qml:186 ../qml/CookbooksSide.qml:119
-#: ../qml/Main.qml:312
+#: ../qml/CookbooksSide.qml:134 ../qml/Main.qml:311
 msgid "Uncategorized"
 msgstr ""
 
@@ -70,10 +64,6 @@ msgstr ""
 
 #: ../qml/EditRecipePage.qml:108
 msgid "Save"
-msgstr ""
-
-#: ../qml/EditRecipePage.qml:115 ../qml/Main.qml:450 ../qml/Main.qml:471
-msgid "Delete"
 msgstr ""
 
 #: ../qml/EditRecipePage.qml:186
@@ -124,45 +114,45 @@ msgstr ""
 msgid "s"
 msgstr ""
 
-#: ../qml/EditableList.qml:138
+#: ../qml/EditableList.qml:122
 msgid "Add"
 msgstr ""
 
-#: ../qml/LogsPage.qml:71
+#: ../qml/LogsSide.qml:88
 msgid "Logs"
 msgstr ""
 
-#: ../qml/Main.qml:85
+#: ../qml/Main.qml:84
 msgid "Error syncing recipes"
 msgstr ""
 
-#: ../qml/Main.qml:112 ../qml/Main.qml:135 ../qml/Main.qml:167
-#: ../qml/Main.qml:198
+#: ../qml/Main.qml:111 ../qml/Main.qml:134 ../qml/Main.qml:166
+#: ../qml/Main.qml:197
 msgid "Status"
 msgstr ""
 
 #. TRANSLATORS: %1 is the recipe name
-#: ../qml/Main.qml:114
+#: ../qml/Main.qml:113
 msgid "Recipe '%1' successfully imported"
 msgstr ""
 
-#: ../qml/Main.qml:120 ../qml/Main.qml:152 ../qml/Main.qml:182
-#: ../qml/Main.qml:211
+#: ../qml/Main.qml:119 ../qml/Main.qml:151 ../qml/Main.qml:181
+#: ../qml/Main.qml:210
 msgid "Error"
 msgstr ""
 
 #. TRANSLATORS: %1 is the recipe name
-#: ../qml/Main.qml:137
+#: ../qml/Main.qml:136
 msgid "Recipe %1 successfully saved"
 msgstr ""
 
 #. TRANSLATORS: %1 is the recipe name
-#: ../qml/Main.qml:169
+#: ../qml/Main.qml:168
 msgid "Recipe '%1' successfully saved"
 msgstr ""
 
 #. TRANSLATORS: %1 is the recipe name
-#: ../qml/Main.qml:200
+#: ../qml/Main.qml:199
 msgid "Recipe '%1' successfully deleted"
 msgstr ""
 
@@ -219,7 +209,7 @@ msgstr ""
 msgid "Purge"
 msgstr ""
 
-#: ../qml/Main.qml:500 ../qml/SettingsPage.qml:253 ../qml/SettingsSide.qml:237
+#: ../qml/Main.qml:500 ../qml/SettingsSide.qml:233
 msgid "Purge recipe database"
 msgstr ""
 
@@ -231,7 +221,7 @@ msgid ""
 "on the upstream server."
 msgstr ""
 
-#: ../qml/Main.qml:636
+#: ../qml/Main.qml:609
 msgid "Create new recipe"
 msgstr ""
 
@@ -255,40 +245,36 @@ msgstr ""
 msgid "Date modified"
 msgstr ""
 
-#: ../qml/SettingsPage.qml:41
-msgid "See logs"
-msgstr ""
-
-#: ../qml/SettingsPage.qml:87 ../qml/SettingsSide.qml:71
+#: ../qml/SettingsSide.qml:88
 msgid "Account"
 msgstr ""
 
-#: ../qml/SettingsPage.qml:102 ../qml/SettingsSide.qml:86
+#: ../qml/SettingsSide.qml:103
 msgid "Add Nextcloud account"
 msgstr ""
 
-#: ../qml/SettingsPage.qml:179 ../qml/SettingsSide.qml:163
+#: ../qml/SettingsSide.qml:173
 msgid "Use test account"
 msgstr ""
 
-#: ../qml/SettingsPage.qml:207 ../qml/SettingsSide.qml:191
+#: ../qml/SettingsSide.qml:194
 msgid "Recipe page UI"
 msgstr ""
 
-#: ../qml/SettingsPage.qml:214 ../qml/SettingsSide.qml:198
+#: ../qml/SettingsSide.qml:201
 msgid "Large text size"
 msgstr ""
 
-#: ../qml/SettingsPage.qml:248 ../qml/SettingsSide.qml:232
+#: ../qml/SettingsSide.qml:228
 msgid "Danger zone"
 msgstr ""
 
-#: ../qml/database.js:274
+#: ../qml/database.js:275
 msgid "Recipes sucsessfully updated from Nextcloud server"
 msgstr ""
 
 #. TRANSLATORS: %1 is the error message returned
-#: ../qml/database.js:281
+#: ../qml/database.js:282
 msgid "Could not fetch recipes from server: %1"
 msgstr ""
 
