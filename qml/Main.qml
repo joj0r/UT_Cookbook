@@ -165,7 +165,7 @@ MainView {
                 PopupUtils.open(infoPopover, root, {
                     'heading': i18n.tr('Status'),
                     // TRANSLATORS: %1 is the recipe name
-                    'body': i18n.tr("Recipe '%1' successfully saved").arg(response.name)
+                    'body': i18n.tr("Recipe '%1' successfully saved").arg(recipe.name)
                 });
                 const now = new Date();
                 const isoNow = now.toISOString();
