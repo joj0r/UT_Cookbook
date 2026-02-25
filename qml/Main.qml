@@ -42,7 +42,7 @@ MainView {
 
     property var categories
     property var logs
-    property string selectedCategory
+    property string selectedCategory: "All recipes"
     property var categoryRecipes
 
     property var selectedRecipe: -1
@@ -268,7 +268,7 @@ MainView {
     AdaptivePageLayout {
         id: pageLayout
         anchors.fill: parent
-        primaryPage: cookbooksPage
+        primaryPage: categoryPage
 
         layouts: [
             PageColumnsLayout {
@@ -288,87 +288,64 @@ MainView {
             PageColumnsLayout {
                 when: width > units.gu(140)
                 PageColumn {
-                    minimumWidth: units.gu(30)
-                    maximumWidth: units.gu(60)
+                    minimumWidth: units.gu(60)
+                    maximumWidth: units.gu(80)
                     preferredWidth: units.gu(40)
                 }
                 PageColumn {
                     fillWidth: true
                     minimumWidth: units.gu(30)
-                    preferredWidth: units.gu(40)
-                }
-                PageColumn {
-                    fillWidth: true
-                    minimumWidth: units.gu(30)
+                    maximumWidth: units.gu(100)
                     preferredWidth: units.gu(40)
                 }
             }
         ]
 
-        CookbooksPage {
-            id: cookbooksPage
-            categories: root.categories
+        Component {
+            id: cookbooksSideComp
+            CookbooksSide {
+                id: cookbooksSide
+                categories: root.categories
+                selectedCategory: root.selectedCategory
+                onOpenCategory: category => {
+                    root.selectedCategory = category ? category : i18n.tr("Uncategorized");
+                    root.selectedRecipe = -1;
+                }
+            }
+        }
+
+        CategoryPage {
+            id: categoryPage
+            category: root.selectedCategory
+            recipes: root.categoryRecipes
+            selectedIndex: root.selectedRecipe
             loading: root.loading
             startupSync: root.startupSync
+            cookbooksSide: cookbooksSideComp
+            settingsSide: settingsSideComp
+            aboutSide: aboutSideComp
+            logsSide: logsSideComp
             bottomEdgeComp: bottomEdgeComponent
+            onSelect: index => root.selectedRecipe = index
             onRefresh: {
                 root.loading = true;
                 root.update();
             }
-            onOpenCategory: category => {
-                selectedCategory = category ? category : i18n.tr("Uncategorized");
-                root.selectedRecipe = -1
-                DB.getCategoryRecipesMeta(selectedCategory).then(recipes => {
-                    var incubator = pageLayout.addPageToNextColumn(cookbooksPage, categoryPageComponent, {
-                        "category": selectedCategory
+            onOpenRecipe: id => {
+                DB.getRecipe(id).then(recipe => {
+                    pageLayout.addPageToNextColumn(categoryPage, recipePageComponent, {
+                        "id": parseInt(id),
+                        "recipe": recipe
                     });
-
-                    if (incubator && incubator.status == Component.Loading) {
-                        incubator.onStatusChanged = function (status) {
-                            if (status == Component.Ready) {
-                                // connect page's destruction to decrement model
-                                incubator.object.Component.destruction.connect(function () {
-                                    cookbooksPage.selectedIndex = -1;
-                                });
-                            }
-                        };
-                    }
                 });
             }
-            onOpenSettings: pageLayout.addPageToCurrentColumn(cookbooksPage, settingsPageComp)
-            onOpenAbout: pageLayout.addPageToCurrentColumn(cookbooksPage, aboutPageComp)
-        }
-
-        Component {
-            id: categoryPageComponent
-            CategoryPage {
-                id: categoryPage
-                recipes: root.categoryRecipes
-                selectedIndex: root.selectedRecipe
-                loading: root.loading
-                startupSync: root.startupSync
-                bottomEdgeComp: bottomEdgeComponent
-                onSelect: index => root.selectedRecipe = index
-                onRefresh: {
-                    root.loading = true;
-                    root.update();
-                }
-                onOpenRecipe: id => {
-                    DB.getRecipe(id).then(recipe => {
-                        pageLayout.addPageToNextColumn(categoryPage, recipePageComponent, {
-                            "id": parseInt(id),
-                            "recipe": recipe
-                        });
-                    });
-                }
-                onDeleteRecipe: recipe => {
-                    PopupUtils.open(deleteRecipeDialogFromCategoryPage, root, {
-                        "object": {
-                            "recipe": recipe,
-                            "page": root
-                        }
-                    });
-                }
+            onDeleteRecipe: recipe => {
+                PopupUtils.open(deleteRecipeDialogFromCategoryPage, root, {
+                    "object": {
+                        "recipe": recipe,
+                        "page": root
+                    }
+                });
             }
         }
 
@@ -380,7 +357,7 @@ MainView {
                 headingSubtitle: i18n.tr('Viewing Recipe')
                 onBack: {
                     pageLayout.removePages(recipePage);
-                    root.selectedRecipe = -1
+                    root.selectedRecipe = -1;
                 }
                 onEditRecipe: recipe => {
                     var incubator = pageLayout.addPageToCurrentColumn(recipePage, editRecipePageComponent, {
@@ -555,13 +532,13 @@ MainView {
         }
 
         Component {
-            id: aboutPageComp
-            AboutPage {}
+            id: aboutSideComp
+            AboutSide {}
         }
 
         Component {
-            id: logsPageComp
-            LogsPage {
+            id: logsSideComp
+            LogsSide {
                 logs: root.logs
                 startupSync: root.startupSync
                 onUpdateLogs: DB.getLogs().then(logs => root.logs = logs)
@@ -569,10 +546,9 @@ MainView {
         }
 
         Component {
-            id: settingsPageComp
-            SettingsPage {
-                id: settingsPage
-                startupSync: root.startupSync
+            id: settingsSideComp
+            SettingsSide {
+                id: settingsSide
                 settingsUI: settings
                 onAddAccount: {
                     accountModel.requestAccess(accountModel.applicationId + "_nextcloud", {});
@@ -592,7 +568,6 @@ MainView {
                 onPurgeDatabase: {
                     PopupUtils.open(purgeDatabaseComp, root);
                 }
-                onOpenLogs: pageLayout.addPageToCurrentColumn(settingsPage, logsPageComp)
             }
         }
     }

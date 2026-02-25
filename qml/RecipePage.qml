@@ -202,30 +202,22 @@ Page {
                     LomiriShape {
                         height: keywordLabel.height + units.gu(1)
                         width: keywordLabel.width + units.gu(1.5)
-                        anchors {
-                            topMargin: units.gu(0.5)
-                            bottomMargin: units.gu(0.5)
-                            leftMargin: units.gu(1)
-                            rightMargin: units.gu(1)
-                        }
-                        color: theme.palette.normal.foreground
-                        LomiriShape {
+                        LomiriBorder {
                             anchors {
                                 fill: parent
-                                topMargin: units.gu(0.125)
-                                bottomMargin: units.gu(0.125)
-                                leftMargin: units.gu(0.125)
-                                rightMargin: units.gu(0.125)
+                                topMargin: units.gu(0)
+                                bottomMargin: units.gu(0)
+                                leftMargin: units.gu(0)
+                                rightMargin: units.gu(0)
                             }
-                            color: theme.palette.normal.background
-                            Label {
-                                id: keywordLabel
-                                text: modelData
-                                textSize: recipePage.labelSize
-                                anchors {
-                                    horizontalCenter: parent.horizontalCenter
-                                    verticalCenter: parent.verticalCenter
-                                }
+                        }
+                        Label {
+                            id: keywordLabel
+                            text: modelData
+                            textSize: recipePage.labelSize
+                            anchors {
+                                horizontalCenter: parent.horizontalCenter
+                                verticalCenter: parent.verticalCenter
                             }
                         }
                     }

@@ -32,7 +32,12 @@ Page {
     property bool loading
     property bool startupSync
     property int selectedIndex
+
+    property Component cookbooksSide
+    property Component settingsSide
+    property Component aboutSide
     property Component bottomEdgeComp
+    property Component logsSide
 
     signal select(int index)
     signal refresh
@@ -43,6 +48,39 @@ Page {
         id: header
         title: category
         subtitle: i18n.tr("Category")
+        leadingActionBar.actions: [
+            Action {
+                iconName: "navigation-menu"
+                text: "Category menu"
+                onTriggered: {
+                    if (leftSideLoader.sourceComponent === cookbooksSide) {
+                        leftSideLoader.sourceComponent = undefined;
+                    } else {
+                        leftSideLoader.sourceComponent = cookbooksSide;
+                    }
+                }
+            }
+        ]
+        ActionBar {
+            anchors {
+                top: parent.top
+                left: parent.left
+                topMargin: units.gu(1)
+            }
+            actions: [
+                Action {
+                    iconName: "navigation-menu"
+                    text: "Category menu"
+                    onTriggered: {
+                        if (leftSideLoader.sourceComponent === cookbooksSide) {
+                            leftSideLoader.sourceComponent = undefined;
+                        } else {
+                            leftSideLoader.sourceComponent = cookbooksSide;
+                        }
+                    }
+                }
+            ]
+        }
         ActionBar {
             anchors {
                 top: parent.top
@@ -52,9 +90,37 @@ Page {
             }
             actions: [
                 Action {
-                    iconName: "add"
-                    text: i18n.tr("Add recipe")
-                    onTriggered: bottomEdgeLoader.item.commit()
+                    iconName: "settings"
+                    text: i18n.tr("Settings")
+                    onTriggered: {
+                        if (leftSideLoader.sourceComponent === settingsSide) {
+                            leftSideLoader.sourceComponent = undefined;
+                        } else {
+                            leftSideLoader.sourceComponent = settingsSide;
+                        }
+                    }
+                },
+                Action {
+                    iconName: "info"
+                    text: i18n.tr("About")
+                    onTriggered: {
+                        if (leftSideLoader.sourceComponent === aboutSide) {
+                            leftSideLoader.sourceComponent = undefined;
+                        } else {
+                            leftSideLoader.sourceComponent = aboutSide;
+                        }
+                    }
+                },
+                Action {
+                    iconName: "document-preview"
+                    text: i18n.tr("See logs")
+                    onTriggered: {
+                        if (leftSideLoader.sourceComponent === logsSide) {
+                            leftSideLoader.sourceComponent = undefined;
+                        } else {
+                            leftSideLoader.sourceComponent = logsSide;
+                        }
+                    }
                 }
             ]
         }
@@ -70,9 +136,21 @@ Page {
         }
     }
 
+    Loader {
+        id: leftSideLoader
+        z: 9
+        anchors {
+            top: header.bottom
+            left: parent.left
+            right: parent.right
+            bottom: parent.bottom
+        }
+    }
+
     LomiriListView {
         id: categoryListView
         model: recipes
+        interactive: leftSideLoader.sourceComponent ? false : true
 
         pullToRefresh {
             enabled: true
@@ -82,10 +160,10 @@ Page {
 
         anchors {
             top: header.bottom
-            topMargin: units.gu(0.5)
             left: parent.left
             right: parent.right
             bottom: parent.bottom
+            topMargin: units.gu(0.5)
             bottomMargin: units.gu(3)
         }
 
@@ -101,24 +179,10 @@ Page {
                 anchors {
                     fill: parent
                 }
-                LomiriShape {
-                    anchors {
-                        fill: parent
-                        topMargin: units.gu(0.5)
-                        bottomMargin: units.gu(0.5)
-                        leftMargin: units.gu(1)
-                        rightMargin: units.gu(1)
-                    }
-                    color: theme.palette.normal.foreground
-                    LomiriShape {
-                        anchors {
-                            fill: parent
-                            topMargin: units.gu(0.125)
-                            bottomMargin: units.gu(0.125)
-                            leftMargin: units.gu(0.125)
-                            rightMargin: units.gu(0.125)
-                        }
-                        color: theme.palette.normal.background
+                LomiriBorder {
+                    anchors.fill: parent
+                    child: LomiriShape {
+                        anchors.fill: parent
                         LomiriShape {
                             anchors.fill: parent
                             color: theme.palette.normal.selection
@@ -128,7 +192,7 @@ Page {
                             anchors.fill: parent
                             onClicked: {
                                 openRecipe(modelData.id);
-                                select(index)
+                                select(index);
                             }
                         }
 
@@ -164,43 +228,10 @@ Page {
             }
 
             leadingActions: ListItemActions {
-                delegate: Rectangle {
-                    width: units.gu(10)
-                    color: theme.palette.normal.background
-                    LomiriShape {
-                        anchors {
-                            fill: parent
-                            topMargin: units.gu(0.5)
-                            bottomMargin: units.gu(0.5)
-                            leftMargin: units.gu(1)
-                            rightMargin: units.gu(1)
-                        }
-                        color: theme.palette.normal.foreground
-                        LomiriShape {
-                            color: theme.palette.normal.background
-                            anchors {
-                                fill: parent
-                                topMargin: units.gu(0.125)
-                                bottomMargin: units.gu(0.125)
-                                leftMargin: units.gu(0.125)
-                                rightMargin: units.gu(0.125)
-                            }
-                            Icon {
-                                name: "delete"
-                                width: units.gu(3)
-                                height: width
-                                color: "red"
-                                anchors {
-                                    horizontalCenter: parent.horizontalCenter
-                                    verticalCenter: parent.verticalCenter
-                                }
-                            }
-                        }
-                    }
-                }
                 actions: [
                     Action {
                         iconName: "delete"
+                        text: i18n.tr("Delete")
                         onTriggered: {
                             deleteRecipe(modelData);
                         }
@@ -216,6 +247,6 @@ Page {
         anchors {
             bottom: parent.bottom
         }
-        sourceComponent: categoryPage.bottomEdgeComp
+        sourceComponent: leftSideLoader.sourceComponent ? undefined : categoryPage.bottomEdgeComp
     }
 }
