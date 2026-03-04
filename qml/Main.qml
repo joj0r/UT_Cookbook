@@ -489,7 +489,7 @@ MainView {
             OKDialog {
                 okButtonText: i18n.tr("Ok")
                 title: i18n.tr("Accounts")
-                text: i18n.tr('To change account, you have to disable this account from the Lomiri System Settings.\n\nThen you can restart this app, and add a new account here.')
+                text: i18n.tr('To change account, you have to revoke access for this account from the Lomiri System Settings.\n\nThen you can restart this app, and add a new account here.')
             }
         }
         Component {
