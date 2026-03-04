@@ -485,7 +485,7 @@ const getCategories = () => {
       for (let i = 0; i < dbCategories.rows.length; i++) {
         categories.push(dbCategories.rows.item(i))
       }
-      categories.unshift({ recipeCategory: 'All recipes', count: dbAllRecipes.rows.item(0).count })
+      categories.unshift({ recipeCategory: i18n.tr('All recipes'), count: dbAllRecipes.rows.item(0).count })
       resolve(categories)
     })
   })
@@ -496,7 +496,7 @@ const getCategoryRecipesMeta = (category) => {
     db.transaction(tx => {
       var dbRecipes;
       switch (category) {
-        case 'All recipes':
+        case i18n.tr('All recipes'):
           dbRecipes = tx.executeSql(
             `SELECT
               name,

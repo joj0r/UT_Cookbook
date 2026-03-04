@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cookbook.stene\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-04 18:57+0000\n"
+"POT-Creation-Date: 2026-03-04 20:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -122,6 +122,10 @@ msgstr ""
 msgid "Logs"
 msgstr ""
 
+#: ../qml/Main.qml:45 ../qml/database.js:488 ../qml/database.js:499
+msgid "All recipes"
+msgstr ""
+
 #: ../qml/Main.qml:84
 msgid "Error syncing recipes"
 msgstr ""
@@ -142,12 +146,7 @@ msgid "Error"
 msgstr ""
 
 #. TRANSLATORS: %1 is the recipe name
-#: ../qml/Main.qml:136
-msgid "Recipe %1 successfully saved"
-msgstr ""
-
-#. TRANSLATORS: %1 is the recipe name
-#: ../qml/Main.qml:168
+#: ../qml/Main.qml:136 ../qml/Main.qml:168
 msgid "Recipe '%1' successfully saved"
 msgstr ""
 
