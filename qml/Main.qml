@@ -501,6 +501,7 @@ MainView {
                 text: i18n.tr('Are you sure you want to purge the local recipe database?\n\nThis will drop all the tables of the local database, but will have no effect on the upstream server.')
                 onDoAction: {
                     purge();
+                    root.categoryRecipes = [];
                 }
             }
         }
