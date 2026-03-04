@@ -1,0 +1,314 @@
+# Norwegian translation
+# Copyright (C) 2026
+# This file is distributed under the same license as the cookbook.stene package.
+# Jonas Stene <jonas@stene.li>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: cookbook.stene\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-04 18:57+0000\n"
+"PO-Revision-Date: 2026-03-04 20:55:0000\n"
+"Last-Translator: Jonas Stene <jonas@stene.li>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../qml/AboutSide.qml:47 ../qml/CategoryPage.qml:105
+msgid "About"
+msgstr "Info"
+
+#: ../qml/AboutSide.qml:84 cookbook.desktop.in.h:1
+msgid "Cookbook"
+msgstr "Kokebok"
+
+#: ../qml/AddRecipe.qml:86
+msgid "Create recipe"
+msgstr "Opprett oppskrift"
+
+#: ../qml/AddRecipe.qml:101
+msgid "Download recipe from URL"
+msgstr "Last ned oppskrift fra URL"
+
+#: ../qml/CategoryPage.qml:50
+msgid "Category"
+msgstr "Kategori"
+
+#: ../qml/CategoryPage.qml:94 ../qml/SettingsSide.qml:55
+msgid "Settings"
+msgstr "Instillinger"
+
+#: ../qml/CategoryPage.qml:116
+msgid "See logs"
+msgstr "Se logg"
+
+#: ../qml/CategoryPage.qml:234 ../qml/EditRecipePage.qml:115
+#: ../qml/EditableList.qml:97 ../qml/Main.qml:450 ../qml/Main.qml:471
+msgid "Delete"
+msgstr "Slett"
+
+#: ../qml/CookbooksSide.qml:76
+msgid "Categories"
+msgstr "Kategorier"
+
+#: ../qml/CookbooksSide.qml:134 ../qml/Main.qml:311
+msgid "Uncategorized"
+msgstr "Ukategorisert"
+
+#: ../qml/EditRecipePage.qml:94
+msgid "Cancel edit"
+msgstr "Avbryt redigering"
+
+#: ../qml/EditRecipePage.qml:108
+msgid "Save"
+msgstr "Lagre"
+
+#: ../qml/EditRecipePage.qml:186
+msgid "Recipe name"
+msgstr "Oppskrifsnavn"
+
+#: ../qml/EditRecipePage.qml:202
+msgid "Description"
+msgstr "Beskrivelse"
+
+#: ../qml/EditRecipePage.qml:228 ../qml/RecipePage.qml:237
+msgid "Cooking times"
+msgstr "Tidsforbruk"
+
+#: ../qml/EditRecipePage.qml:238 ../qml/RecipePage.qml:248
+msgid "Preparation"
+msgstr "Forberedelse"
+
+#: ../qml/EditRecipePage.qml:248 ../qml/RecipePage.qml:257
+msgid "Cooking"
+msgstr "Matlaging"
+
+#: ../qml/EditRecipePage.qml:258 ../qml/RecipePage.qml:266
+msgid "Total time"
+msgstr "Total tid"
+
+#: ../qml/EditRecipePage.qml:284 ../qml/RecipePage.qml:291
+msgid "Ingredients"
+msgstr "Ingredienser"
+
+#: ../qml/EditRecipePage.qml:382 ../qml/RecipePage.qml:442
+msgid "Marked ingredients could not be recalculated due to incorrect syntax."
+msgstr "Markerte ingredienser kunne ikke beregnes gunnet feil syntaks"
+
+#: ../qml/EditRecipePage.qml:405 ../qml/RecipePage.qml:466
+msgid "Instructions"
+msgstr "Instruksjoner"
+
+#: ../qml/EditRecipePage.qml:491 ../qml/RecipePage.qml:51
+msgid "h"
+msgstr "t"
+
+#: ../qml/EditRecipePage.qml:510 ../qml/RecipePage.qml:53
+msgid "min"
+msgstr "min"
+
+#: ../qml/EditRecipePage.qml:529 ../qml/RecipePage.qml:55
+msgid "s"
+msgstr "s"
+
+#: ../qml/EditableList.qml:127
+msgid "Add"
+msgstr "Legg til"
+
+#: ../qml/LogsSide.qml:88
+msgid "Logs"
+msgstr "Logg"
+
+#: ../qml/Main.qml:45
+msgid "All recipes"
+msgstr "Alle oppskrifter"
+
+#: ../qml/Main.qml:84
+msgid "Error syncing recipes"
+msgstr "Syncing av oppskrifter feilet"
+
+#: ../qml/Main.qml:111 ../qml/Main.qml:134 ../qml/Main.qml:166
+#: ../qml/Main.qml:197
+msgid "Status"
+msgstr "Status"
+
+#. TRANSLATORS: %1 is the recipe name
+#: ../qml/Main.qml:113
+msgid "Recipe '%1' successfully imported"
+msgstr "Oppskrift '%1' importert"
+
+#: ../qml/Main.qml:119 ../qml/Main.qml:151 ../qml/Main.qml:181
+#: ../qml/Main.qml:210
+msgid "Error"
+msgstr "Feil"
+
+#. TRANSLATORS: %1 is the recipe name
+#: ../qml/Main.qml:136 ../qml/Main.qml:168
+msgid "Recipe '%1' successfully saved"
+msgstr "Oppskrift '%1' lagret"
+
+#. TRANSLATORS: %1 is the recipe name
+#: ../qml/Main.qml:199
+msgid "Recipe '%1' successfully deleted"
+msgstr "Oppskrift '%1' slettet"
+
+#: ../qml/Main.qml:357
+msgid "Viewing Recipe"
+msgstr "Viser oppskrift"
+
+#: ../qml/Main.qml:388
+msgid "Editing Recipe"
+msgstr "Redigerer oppskrift"
+
+#: ../qml/Main.qml:416
+msgid "Creating new Recipe"
+msgstr "Oppretter ny oppskrift"
+
+#: ../qml/Main.qml:440
+msgid "Abort"
+msgstr "Avbryt"
+
+#: ../qml/Main.qml:441
+msgid "Abort editing"
+msgstr "Avbryt redigering"
+
+#: ../qml/Main.qml:442
+msgid "Are you sure you want to abort editing, and discard all changes?"
+msgstr "Er du sikker på at du vil avbryte redigering, og forkaste alle endringer?"
+
+#: ../qml/Main.qml:451 ../qml/Main.qml:472
+msgid "Delete recipe"
+msgstr "Slett oppskrift"
+
+#. TRANSLATORS: %1 is the recipe name
+#: ../qml/Main.qml:453 ../qml/Main.qml:474
+msgid "Are you sure you want to delete recipe %1?"
+msgstr "Er du sikker på at du vil slette oppskrift %1?"
+
+#: ../qml/Main.qml:490
+msgid "Ok"
+msgstr "Ok"
+
+#: ../qml/Main.qml:491
+msgid "Accounts"
+msgstr "Kontoer"
+
+#: ../qml/Main.qml:492
+msgid ""
+"To change account, you have to disable this account from the Lomiri System "
+"Settings.\n"
+"\n"
+"Then you can restart this app, and add a new account here."
+msgstr ""
+"For å bytte konto må du fjerne kontotilgangen for denne kontoen fra Lomiri Systeminstillinger.\n"
+"\n"
+"Deretter kan du restarte denne appen og legge til en ny konto her."
+
+#: ../qml/Main.qml:499
+msgid "Purge"
+msgstr "Slett"
+
+#: ../qml/Main.qml:500 ../qml/SettingsSide.qml:233
+msgid "Purge recipe database"
+msgstr "Slett oppskriftsdatabasen"
+
+#: ../qml/Main.qml:501
+msgid ""
+"Are you sure you want to purge the local recipe database?\n"
+"\n"
+"This will drop all the tables of the local database, but will have no effect "
+"on the upstream server."
+msgstr ""
+"Er du sikker på at du vil slette den lokale oppskriftsdatabasen?\n"
+"\n"
+"Dette vil slette alle tabeller i den lokale databasen, men vil ikke ha noen effekt "
+"på serveren."
+
+#: ../qml/Main.qml:610
+msgid "Create new recipe"
+msgstr "Opprett ny oppskrift"
+
+#: ../qml/OKCancelDialog.qml:21
+msgid "Cancel"
+msgstr "Avbryt"
+
+#: ../qml/RecipePage.qml:116
+msgid "Edit"
+msgstr "Rediger"
+
+#: ../qml/RecipePage.qml:532
+msgid "Metadata"
+msgstr "Metadata"
+
+#: ../qml/RecipePage.qml:550
+msgid "Date created"
+msgstr "Dato opprettet"
+
+#: ../qml/RecipePage.qml:576
+msgid "Date modified"
+msgstr "Dato endret"
+
+#: ../qml/SettingsSide.qml:88
+msgid "Account"
+msgstr "Konto"
+
+#: ../qml/SettingsSide.qml:103
+msgid "Add Nextcloud account"
+msgstr "Legg til Nextcloud-konto"
+
+#: ../qml/SettingsSide.qml:173
+msgid "Use test account"
+msgstr "Bruk testkonto"
+
+#: ../qml/SettingsSide.qml:194
+msgid "Recipe page UI"
+msgstr "Oppskrifts-side UI"
+
+#: ../qml/SettingsSide.qml:201
+msgid "Large text size"
+msgstr "Stor tekst"
+
+#: ../qml/SettingsSide.qml:228
+msgid "Danger zone"
+msgstr "Farlig sone"
+
+#: ../qml/database.js:275
+msgid "Recipes sucsessfully updated from Nextcloud server"
+msgstr "Oppskrifter oppdatert fra Nextcloud serveren"
+
+#. TRANSLATORS: %1 is the error message returned
+#: ../qml/database.js:282
+msgid "Could not fetch recipes from server: %1"
+msgstr "Kunne ikke laste ned oppskrift fra serveren: %1"
+
+#. TRANSLATORS: %1 is the error message returned
+#: ../qml/server.js:55
+msgid "Importing recipe failed: %1"
+msgstr "Import av oppskrift feilet: %1"
+
+#. TRANSLATORS: %1 is the error message returned
+#: ../qml/server.js:68
+msgid "Creating recipe failed: %1"
+msgstr "Oppretting av oppskrift feilet: %1"
+
+#. TRANSLATORS: %1 is the error message returned
+#: ../qml/server.js:81
+msgid "Updating recipe failed: %1"
+msgstr "Oppdatering av oppskrift feilet: %1"
+
+#. TRANSLATORS: %1 is recipe id, %2 is the error message returned
+#: ../qml/server.js:94
+msgid "Deleting recipe %1 failed: %2"
+msgstr "Sletting av oppskrift %1 feilet: %2"
+
+#. TRANSLATORS: %1 is recipe id, %2 is the error message returned
+#: ../qml/server.js:108
+msgid "Fetching recipe %1 failed: %2"
+msgstr "Nedlasting av oppskrift %1 feilet: %2"
+
+#: ../qml/server.js:132
+msgid "Image download timed out"
+msgstr "Nedlasting av bilde timet ut"
