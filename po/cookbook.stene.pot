@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cookbook.stene\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-04 18:41+0000\n"
+"POT-Creation-Date: 2026-03-04 18:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,7 +46,7 @@ msgid "See logs"
 msgstr ""
 
 #: ../qml/CategoryPage.qml:234 ../qml/EditRecipePage.qml:115
-#: ../qml/EditableList.qml:96 ../qml/Main.qml:450 ../qml/Main.qml:471
+#: ../qml/EditableList.qml:97 ../qml/Main.qml:450 ../qml/Main.qml:471
 msgid "Delete"
 msgstr ""
 
@@ -114,7 +114,7 @@ msgstr ""
 msgid "s"
 msgstr ""
 
-#: ../qml/EditableList.qml:126
+#: ../qml/EditableList.qml:127
 msgid "Add"
 msgstr ""
 

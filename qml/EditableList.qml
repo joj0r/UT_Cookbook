@@ -49,6 +49,7 @@ Column {
         height: contentItem.childrenRect.height
         spacing: units.gu(1)
         flickableDirection: Flickable.AutoFlickIfNeeded
+        interactive: false
         ViewItems.onDragUpdated: {
             if (event.status == ListItemDrag.Moving) {
                 // inform dragging that move is not performed
