@@ -10,7 +10,7 @@
             "desktop":  "cookbook.desktop"
         }
     },
-    "version": "1.0.0",
+    "version": "1.0.2",
     "maintainer": "Jonas Stene <jonas@stene.li>",
     "framework" : "@CLICK_FRAMEWORK@"
 }

@@ -39,13 +39,13 @@ const apiCall = (url, auth, method, param = "", recipe) => {
 }
 
 const getRecipesMeta = (url, auth) => {
-  const endpointUrl = "/apps/cookbook/api/v1/recipes"
+  const endpointUrl = "/index.php/apps/cookbook/api/v1/recipes"
 
   return apiCall(url + endpointUrl, auth, "GET")
 }
 
 const importRecipe = (url, auth, recipeUrl) => {
-  const endpointUrl = "/apps/cookbook/api/v1/import"
+  const endpointUrl = "/index.php/apps/cookbook/api/v1/import"
 
   return new Promise((resolve, reject) => {
     apiCall(url + endpointUrl, auth, "POST", "", recipeUrl)
@@ -58,7 +58,7 @@ const importRecipe = (url, auth, recipeUrl) => {
 }
 
 const createRecipe = (url, auth, recipe) => {
-  const endpointUrl = "/apps/cookbook/api/v1/recipes"
+  const endpointUrl = "/index.php/apps/cookbook/api/v1/recipes"
 
   return new Promise((resolve, reject) => {
     apiCall(url + endpointUrl, auth, "POST", "", recipe)
@@ -71,7 +71,7 @@ const createRecipe = (url, auth, recipe) => {
 }
 
 const updateRecipe = (url, auth, id, recipe) => {
-  const endpointUrl = "/apps/cookbook/api/v1/recipes/"
+  const endpointUrl = "/index.php/apps/cookbook/api/v1/recipes/"
 
   return new Promise((resolve, reject) => {
     apiCall(url + endpointUrl, auth, "PUT", id, recipe)
@@ -84,7 +84,7 @@ const updateRecipe = (url, auth, id, recipe) => {
 }
 
 const deleteRecipe = (url, auth, id) => {
-  const endpointUrl = "/apps/cookbook/api/v1/recipes/"
+  const endpointUrl = "/index.php/apps/cookbook/api/v1/recipes/"
 
   return new Promise((resolve, reject) => {
     apiCall(url + endpointUrl, auth, "DELETE", id)
@@ -98,7 +98,7 @@ const deleteRecipe = (url, auth, id) => {
 
 
 const getRecipe = (url, auth, id) => {
-  const endpointUrl = "/apps/cookbook/api/v1/recipes/"
+  const endpointUrl = "/index.php/apps/cookbook/api/v1/recipes/"
 
   return new Promise((resolve, reject) => {
     apiCall(url + endpointUrl, auth, "GET", id)
