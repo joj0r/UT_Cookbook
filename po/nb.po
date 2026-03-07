@@ -169,7 +169,7 @@ msgstr "Oppretter ny oppskrift"
 
 #: ../qml/Main.qml:440
 msgid "Abort"
-msgstr "Avbryt"
+msgstr "Forkast"
 
 #: ../qml/Main.qml:441
 msgid "Abort editing"
@@ -177,7 +177,7 @@ msgstr "Avbryt redigering"
 
 #: ../qml/Main.qml:442
 msgid "Are you sure you want to abort editing, and discard all changes?"
-msgstr "Er du sikker på at du vil avbryte redigering, og forkaste alle endringer?"
+msgstr "Er du sikker på at du vil avslutte redigering, og forkaste alle endringer?"
 
 #: ../qml/Main.qml:451 ../qml/Main.qml:472
 msgid "Delete recipe"
