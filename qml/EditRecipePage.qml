@@ -490,7 +490,7 @@ Page {
                                         id: hourPicker
                                         model: getList(i18n.tr("h"), 24)
                                         circular: false
-                                        selectedIndex: getTimeFromDuration(time, 1)
+                                        selectedIndex: getTimeFromDuration(time, 1) || 0
                                         onSelectedIndexChanged: {
                                             recipe[name] = getDurationFromTime([hourPicker.selectedIndex, minutePicker.selectedIndex, secondPicker.selectedIndex]);
                                             time = getDurationFromTime([hourPicker.selectedIndex, minutePicker.selectedIndex, secondPicker.selectedIndex]);
@@ -509,7 +509,7 @@ Page {
                                         id: minutePicker
                                         model: getList(i18n.tr("min"), 59)
                                         circular: false
-                                        selectedIndex: getTimeFromDuration(time, 2)
+                                        selectedIndex: getTimeFromDuration(time, 2) || 0
                                         onSelectedIndexChanged: {
                                             recipe[name] = getDurationFromTime([hourPicker.selectedIndex, minutePicker.selectedIndex, secondPicker.selectedIndex]);
                                             time = getDurationFromTime([hourPicker.selectedIndex, minutePicker.selectedIndex, secondPicker.selectedIndex]);
@@ -528,7 +528,7 @@ Page {
                                         id: secondPicker
                                         model: getList(i18n.tr("s"), 59)
                                         circular: false
-                                        selectedIndex: getTimeFromDuration(time, 3)
+                                        selectedIndex: getTimeFromDuration(time, 3) || 0
                                         onSelectedIndexChanged: {
                                             recipe[name] = getDurationFromTime([hourPicker.selectedIndex, minutePicker.selectedIndex, secondPicker.selectedIndex]);
                                             time = getDurationFromTime([hourPicker.selectedIndex, minutePicker.selectedIndex, secondPicker.selectedIndex]);
