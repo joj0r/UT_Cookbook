@@ -1,0 +1,317 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the cookbook.stene package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: cookbook.stene\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-03-04 20:45+0000\n"
+"PO-Revision-Date: 2026-03-10 19:35+0100\n"
+"Last-Translator: Joan CiberSheep <info@cibersheep.com>\n"
+"Language-Team: \n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.4.2\n"
+
+#: ../qml/AboutSide.qml:47 ../qml/CategoryPage.qml:105
+msgid "About"
+msgstr "Quant a"
+
+#: ../qml/AboutSide.qml:84 cookbook.desktop.in.h:1
+msgid "Cookbook"
+msgstr "Llibre de receptes"
+
+#: ../qml/AddRecipe.qml:86
+msgid "Create recipe"
+msgstr "Crea recepta"
+
+#: ../qml/AddRecipe.qml:101
+msgid "Download recipe from URL"
+msgstr "Descarrega la receptes des d'un enllaç"
+
+#: ../qml/CategoryPage.qml:50
+msgid "Category"
+msgstr "Categoria"
+
+#: ../qml/CategoryPage.qml:94 ../qml/SettingsSide.qml:55
+msgid "Settings"
+msgstr "Paràmetres"
+
+#: ../qml/CategoryPage.qml:116
+msgid "See logs"
+msgstr "Mostra el registre"
+
+#: ../qml/CategoryPage.qml:234 ../qml/EditRecipePage.qml:115
+#: ../qml/EditableList.qml:97 ../qml/Main.qml:450 ../qml/Main.qml:471
+msgid "Delete"
+msgstr "Elimina"
+
+#: ../qml/CookbooksSide.qml:76
+msgid "Categories"
+msgstr "Categories"
+
+#: ../qml/CookbooksSide.qml:134 ../qml/Main.qml:311
+msgid "Uncategorized"
+msgstr "Sense categoria"
+
+#: ../qml/EditRecipePage.qml:94
+msgid "Cancel edit"
+msgstr "Cancel·la l'edició"
+
+#: ../qml/EditRecipePage.qml:108
+msgid "Save"
+msgstr "Desa"
+
+#: ../qml/EditRecipePage.qml:186
+msgid "Recipe name"
+msgstr "Nom de la recepta"
+
+#: ../qml/EditRecipePage.qml:202
+msgid "Description"
+msgstr "Descripció"
+
+#: ../qml/EditRecipePage.qml:228 ../qml/RecipePage.qml:237
+msgid "Cooking times"
+msgstr "Temps de cocció"
+
+#: ../qml/EditRecipePage.qml:238 ../qml/RecipePage.qml:248
+msgid "Preparation"
+msgstr "Preparació"
+
+#: ../qml/EditRecipePage.qml:248 ../qml/RecipePage.qml:257
+msgid "Cooking"
+msgstr "Cocció"
+
+#: ../qml/EditRecipePage.qml:258 ../qml/RecipePage.qml:266
+msgid "Total time"
+msgstr "Temps total"
+
+#: ../qml/EditRecipePage.qml:284 ../qml/RecipePage.qml:291
+msgid "Ingredients"
+msgstr "Ingredients"
+
+#: ../qml/EditRecipePage.qml:382 ../qml/RecipePage.qml:442
+msgid "Marked ingredients could not be recalculated due to incorrect syntax."
+msgstr ""
+"No s'han pogut calcular els ingredients seleccionats per un error de sintaxi."
+
+#: ../qml/EditRecipePage.qml:405 ../qml/RecipePage.qml:466
+msgid "Instructions"
+msgstr "Instruccions"
+
+#: ../qml/EditRecipePage.qml:491 ../qml/RecipePage.qml:51
+msgid "h"
+msgstr "h"
+
+#: ../qml/EditRecipePage.qml:510 ../qml/RecipePage.qml:53
+msgid "min"
+msgstr "min"
+
+#: ../qml/EditRecipePage.qml:529 ../qml/RecipePage.qml:55
+msgid "s"
+msgstr "s"
+
+#: ../qml/EditableList.qml:127
+msgid "Add"
+msgstr "Afegeix"
+
+#: ../qml/LogsSide.qml:88
+msgid "Logs"
+msgstr "Registres"
+
+#: ../qml/Main.qml:45 ../qml/database.js:488 ../qml/database.js:499
+msgid "All recipes"
+msgstr "Totes les receptes"
+
+#: ../qml/Main.qml:84
+msgid "Error syncing recipes"
+msgstr "La sincronització de les receptes ha fallat"
+
+#: ../qml/Main.qml:111 ../qml/Main.qml:134 ../qml/Main.qml:166
+#: ../qml/Main.qml:197
+msgid "Status"
+msgstr "Estat"
+
+#. TRANSLATORS: %1 is the recipe name
+#: ../qml/Main.qml:113
+msgid "Recipe '%1' successfully imported"
+msgstr "La recepta «%1» s'ha importat correctament"
+
+#: ../qml/Main.qml:119 ../qml/Main.qml:151 ../qml/Main.qml:181
+#: ../qml/Main.qml:210
+msgid "Error"
+msgstr "Error"
+
+#. TRANSLATORS: %1 is the recipe name
+#: ../qml/Main.qml:136 ../qml/Main.qml:168
+msgid "Recipe '%1' successfully saved"
+msgstr "La recepta «%1» s'ha desat correctament"
+
+#. TRANSLATORS: %1 is the recipe name
+#: ../qml/Main.qml:199
+msgid "Recipe '%1' successfully deleted"
+msgstr "La recepta «%1» s'ha eliminat correctament"
+
+#: ../qml/Main.qml:357
+msgid "Viewing Recipe"
+msgstr "Mostrant la recepta"
+
+#: ../qml/Main.qml:388
+msgid "Editing Recipe"
+msgstr "Editant la recepta"
+
+#: ../qml/Main.qml:416
+msgid "Creating new Recipe"
+msgstr "Creant una nova recepta"
+
+#: ../qml/Main.qml:440
+msgid "Abort"
+msgstr "Avorta"
+
+#: ../qml/Main.qml:441
+msgid "Abort editing"
+msgstr "Avorta l'edició"
+
+#: ../qml/Main.qml:442
+msgid "Are you sure you want to abort editing, and discard all changes?"
+msgstr "Segur que voleu avortar l'edició i descartar tots els canvis?"
+
+#: ../qml/Main.qml:451 ../qml/Main.qml:472
+msgid "Delete recipe"
+msgstr "Elimina la recepta"
+
+#. TRANSLATORS: %1 is the recipe name
+#: ../qml/Main.qml:453 ../qml/Main.qml:474
+msgid "Are you sure you want to delete recipe %1?"
+msgstr "Segur que voleu eliminar la recepta %1?"
+
+#: ../qml/Main.qml:490
+msgid "Ok"
+msgstr "D'acord"
+
+#: ../qml/Main.qml:491
+msgid "Accounts"
+msgstr "Comptes"
+
+#: ../qml/Main.qml:492
+msgid ""
+"To change account, you have to revoke access for this account from the "
+"Lomiri System Settings.\n"
+"\n"
+"Then you can restart this app, and add a new account here."
+msgstr ""
+"Per canviar de compte, heu de revocar-ne l'accés d'aquest des de Paràmetes "
+"del sistema de Lomiri.\n"
+"\n"
+"A continuació, reiniciau aquesta aplicació i afegir un compte nou aquí."
+
+#: ../qml/Main.qml:499
+msgid "Purge"
+msgstr "Buida-ho tot"
+
+#: ../qml/Main.qml:500 ../qml/SettingsSide.qml:233
+msgid "Purge recipe database"
+msgstr "Buida la base de dades de receptes"
+
+#: ../qml/Main.qml:501
+msgid ""
+"Are you sure you want to purge the local recipe database?\n"
+"\n"
+"This will drop all the tables of the local database, but will have no effect "
+"on the upstream server."
+msgstr ""
+"Segur que voleu buidar la base de dades local de receptes?\n"
+"\n"
+"Això les eliminarà totes de les taules de la base de dades local, però no "
+"tendrà cap efecte en el servidor remot."
+
+#: ../qml/Main.qml:610
+msgid "Create new recipe"
+msgstr "Crea una nova recepta"
+
+#: ../qml/OKCancelDialog.qml:21
+msgid "Cancel"
+msgstr "Cancel·la"
+
+#: ../qml/RecipePage.qml:116
+msgid "Edit"
+msgstr "Edita"
+
+#: ../qml/RecipePage.qml:532
+msgid "Metadata"
+msgstr "Metadades"
+
+#: ../qml/RecipePage.qml:550
+msgid "Date created"
+msgstr "Data de creació"
+
+#: ../qml/RecipePage.qml:576
+msgid "Date modified"
+msgstr "Data de modificació"
+
+#: ../qml/SettingsSide.qml:88
+msgid "Account"
+msgstr "Compte"
+
+#: ../qml/SettingsSide.qml:103
+msgid "Add Nextcloud account"
+msgstr "Afegeix un compte de nextCloud"
+
+#: ../qml/SettingsSide.qml:173
+msgid "Use test account"
+msgstr "Usa un compte de prova"
+
+#: ../qml/SettingsSide.qml:194
+msgid "Recipe page UI"
+msgstr "Interfície de les receptes"
+
+#: ../qml/SettingsSide.qml:201
+msgid "Large text size"
+msgstr "Mida gran de text"
+
+#: ../qml/SettingsSide.qml:228
+msgid "Danger zone"
+msgstr "Zona de perill"
+
+#: ../qml/database.js:275
+msgid "Recipes sucsessfully updated from Nextcloud server"
+msgstr "S'han actualitzat les receptes des del servidor nextCloud amb èxit"
+
+#. TRANSLATORS: %1 is the error message returned
+#: ../qml/database.js:282
+msgid "Could not fetch recipes from server: %1"
+msgstr "No s'han pogut aconseguir les receptes des del servidor: %1"
+
+#. TRANSLATORS: %1 is the error message returned
+#: ../qml/server.js:55
+msgid "Importing recipe failed: %1"
+msgstr "Ha fallat la importació de receptes: %1"
+
+#. TRANSLATORS: %1 is the error message returned
+#: ../qml/server.js:68
+msgid "Creating recipe failed: %1"
+msgstr "Ha fallat la creació de receptes: %1"
+
+#. TRANSLATORS: %1 is the error message returned
+#: ../qml/server.js:81
+msgid "Updating recipe failed: %1"
+msgstr "Ha fallat l'actualització de receptes: %1"
+
+#. TRANSLATORS: %1 is recipe id, %2 is the error message returned
+#: ../qml/server.js:94
+msgid "Deleting recipe %1 failed: %2"
+msgstr "Ha fallat l'eliminació de la recepta: %2"
+
+#. TRANSLATORS: %1 is recipe id, %2 is the error message returned
+#: ../qml/server.js:108
+msgid "Fetching recipe %1 failed: %2"
+msgstr "Ha fallat la baixada de receptes: %2"
+
+#: ../qml/server.js:132
+msgid "Image download timed out"
+msgstr "S'ha esgotat el temps d'espera per a la descàrrega de la imatge"
