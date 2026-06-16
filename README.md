@@ -1,5 +1,7 @@
 # Nextcloud Cookbook app for the Ubuntu Touch
 
+> **NOTE: This repo is archived. The code and app is moved to [Codeberg](https://codeberg.org/jonasstene/UT_Cookbook)**
+
 [![OpenStore](https://open-store.io/badges/en_US.png)](https://open-store.io/app/cookbook.stene)
 
 Sync your recipes from your [Nextlcoud server]("https://nextcloud.com/") with [Cookbook app]("https://apps.nextcloud.com/apps/cookbook") installed to your Ubuntu Touch device.
